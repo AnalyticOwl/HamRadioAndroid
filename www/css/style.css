@@ -1,0 +1,737 @@
+/*.............ratine display..................*/
+
+            
+
+/*../////////  ---------------------------ratine display..................*/
+.ui-page-theme-a .ui-panel-wrapper{ background:none !important;}
+.top_header{background-image:url('../image/android/top-bar-no-logo.png'); left: 0;right: 0;top: 0; height: 64px;}
+.top_header h3{ margin-top:20px !important; }
+.top_right_buttons{right:0 !important; margin-right: 8px;}
+/*.top_left_buttons{top:0 !important;}*/
+.topbutton{display:inline-block;}
+.ui-title{position:relative; right:16px;}
+.btnbgtop a{right: 5px; overflow:hidden; margin:0;top: 5px;}
+.backbtn a{left: 0px;
+    position: absolute;
+    width: 60px;
+    top: 2px !important;
+    color: #fff;
+    text-shadow: none;
+    text-decoration: none;}
+	div#topheading {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    margin-left: auto;
+    margin-right: auto;
+    position: absolute;
+    top: 15px;
+}
+
+.ui-footer-fixed {
+    max-height: 73px;
+    min-height: 40px;
+    height: 100%;
+	    background: #212224;
+}
+.ui-footer-fixed li img {
+    height: 83%;
+}
+.innertitle{display:inline-block; top: 10px; position: absolute; margin-left: 5px;}
+
+.ui-content{
+    text-shadow: none;
+}
+
+
+.ui-page-theme-a .ui-body-inherit{
+background:none !important;    
+text-shadow:none !important;
+color:#FFFFFF;
+border: none;
+    border-bottom: 1px solid #767772;
+    border-radius: 0;
+
+}
+.ui-focus {
+    outline: -webkit-focus-ring-color auto 0px !important;
+}
+.icon_register{
+    background-image:url('../image/android/regiester-button2.png');
+
+}
+
+body{
+ background-color: #151719 !important;
+ background-size: 100% 100%;*/
+ background-repeat:repeat;
+ background-position:100% 100%;*/
+ top: 0px;
+ left: 0px;
+ text-align: center;
+ margin:0;
+ padding:0;
+ text-shadow:none
+} 
+#menu-centered {
+    padding: 20px 0 0 0; background:#151719;
+}
+#menu-centered ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+#menu-centered li {
+    display: inline;
+    list-style: none;
+    padding: 10px 5px 15px 5px;
+}
+#menu-centered li img {
+    width: 28%;
+    height: auto;
+	max-width: 135px;
+}
+.backerrow{
+	background-image: url("images/icons-png/carat-l-white.png");
+    display: block;
+    width: 12px;
+    height: 15px;
+    background-repeat: no-repeat;
+    position: absolute;
+    left: -15px;
+}
+
+.share_img {
+    background: url("../image/share.png") no-repeat;
+    width: 65px;
+    height: 26px;
+    position: relative;
+    float: right;
+}
+.usericon{
+	     background: url("../image/user.jpg") no-repeat scroll 99.2% 7px !important;
+    padding-right: 50px !important;
+}
+.terms_conditions{
+color:#fff;
+    padding: 10px 0px 30px;
+font-size:16px;
+}
+.ui-mobile [data-role=page], .ui-mobile [data-role=dialog], .ui-page {
+	background-image:url('../image/android/bg4.png');
+    bottom: 0;
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    position: relative;
+    text-shadow: none;
+    /*height: 100%;*/
+}
+
+.ui-input-text input, .ui-input-search input.home-search {padding-right: 8%;     text-align: right;background:  black; width:95%; margin:0 auto; border-radius:5px; }
+
+
+.ui-input-text input.home-search:before, .ui-input-search input.home-search:before { background-image: url('../image/android/search-ico.png');  width:20px; height:20px; }
+.below-search-subscribe {    width:98%; height:auto; margin:3% 0 auto 0; }
+.below-search-subscribe img {    width:100%; background-size:50%; }
+
+.below-search-home {    width:98%; height:auto; margin:0 auto; }
+.below-search-home img {    width:100%; background-size:50%; }
+.below-search-showcase {    width:100%; height:auto; margin:0 auto; }
+.below-search-showcase img {    width:100%; background-size:50%; }
+.latest-music-head { width:100%; margin:0 auto; }
+.latest-music-head h4  { color:#bd9562; text-align:right; right:3%; position:relative; font-weight:normal; margin:2% 0% 1% 0;}
+
+.owl-carousel .owl-stage-outer {     margin: 0px 15px 10px;}
+.latest-music-content{ width:96%; margin:0 auto;display: inline-block;}
+.article-latest-music-1{ width:85%;float: left;    margin-right: 1px; position:relative; }
+.article-latest-music-1 img { width:96%;}
+.article-latest-music-1 img:after { width:96%;}
+.play-button { background-image: url('../image/android/audio_play.png');
+    width: 25px;
+    height: 25px;
+    position: absolute;
+    bottom: -5%;
+    left: -6%;
+    z-index: 1;
+    background-size: cover;}
+	.article-latest-head-1 { font-size:16px; text-align:center; color:#bd9562; display:block; }
+	.article-latest-head-2 { font-size:14px; text-align:center; color:#fff; display:block; }
+	.img-play-cont {
+    position: relative;
+}
+
+.play-button-video { background-image: url('../image/android/play-video@2x.png');  width: 44px;
+    height: 43px;
+    position: absolute;    background-size: cover;
+    top: 32%;
+    left: 33%; }
+	.article-latest-head-1 {     font-size: 90%; text-align:center; color:#bd9562; display:block; }
+	.article-latest-head-2 { font-size:14px; text-align:center; color:#fff; display:block; }
+	.img-play-cont {
+    position: relative;
+}
+
+#latest-home-top-music{ background: #231f20;display: inline-block;}
+.list-view-cont {
+    width: 100%;
+    display: block;
+    float: left;
+    margin: 1% auto; border-bottom: 2px solid #bd9562;}
+.list-view-cont img { width: 24%;
+    display: inline;
+    float: right;
+    right: 4%;
+    position: relative; } 
+	.list-text-cont { width: 70%; margin-top: 4%;
+    display: inline;
+    float: left;
+    text-align: right; }
+	.list-text-head { color:#ab5809; }
+	.list-text-desc { color:#fff; }
+	
+#latest-news-cont{ display:inline-block;}	
+.latest-news-cont {
+    width: 50%;
+    display: block;
+    float: left;
+    margin: 1% auto 0; 
+	border-bottom:none;
+	}
+.latest-news-cont img { width: 24%;
+    display: inline;
+    float: right;
+    right: 4%;
+    position: relative; } 
+	.latest-news-text-cont { width: 70%; margin-top: 4%;
+    display: inline;
+    float: left;
+    text-align: right; }
+	.latest-news-text-head { color:#ae834f; }
+	.latest-news-text-date { color:#fff;
+    font-size: 80%; }
+	
+.NewsGrid-cont {
+    width: 50%;
+    display: block;
+    float: right;
+    margin: 1% auto; border-bottom: 1px solid #bd9562;
+	}
+.NewsGrid-cont img { width: 22%;
+    position: relative;
+    float: right; } 
+	.NewsGrid-text-cont { width: 75%; padding-top: 4%;
+    display: inline;
+    float: right;
+    text-align: right; background:#151719; }
+	.NewsGrid-text-head { color:#ae834f;font-size: 14px; }
+	.NewsGrid-text-date { color:#d6c3a8;font-size: 12px; }
+	
+	.NewsDetail-cont{width: 100%;
+    display: block;
+    float: right;
+    margin: 1% auto;}
+	.NewsDetail-cont img {    width: 100%;
+    position: relative;
+    height: 250px; } 
+	.NewsDetail-text-cont { width: 100%; padding-top: 4%;    display: inline;    float: right;    text-align: right; background:#151719;padding-bottom: 4%;margin-bottom: 5%; }
+	.NewsDetail-cont p{color: #d6c3a8;font-size: 16px;    text-align: right;    margin: 0 5%; }
+	.NewsDetail-text-head { color: #fff;font-size: 16px;float: right;    position: relative;right: 5%; }
+	.NewsDetail-text-date {     color: #d6c3a8;font-size: 12px;    float: left;    left: 5%;position: relative; }
+	
+	
+	/*  Subscription*/
+	.Subscription-cont{width: 100%;
+    display: block;
+    float: right;
+    margin: 1% auto;}
+	.Subscription-cont img {    width: 100%; position: relative; } 
+	.Subscription-text-cont { width: 100%;   display: inline;    float: right;    text-align: right; background:#151719; }
+	.Subscription-cont p{color: #d6c3a8;font-size: 16px;    text-align: right;    margin: 0 5%; }
+	.Subscription-text-head1 { color: #fff;font-size: 18px;text-align: center;    margin: 2% 0% 1% 0%;}
+	.Subscription-text-head2 { color: #fff;font-size: 14px;text-align: center;    margin: 1% 0% 1% 0%;}
+	.Subscription-text-button { text-align:center; margin: auto; width:90%; }
+	.Subscription-text-button-img { background:url('../image/android/Subscription-button@2x.png');background-size: cover;
+    min-height: 65px; width:100%;    margin: 0 auto;    border-radius: 15px;}
+	.Subscription-text-button-img a{    color: #fff !important;vertical-align: middle;    position: relative;    top: 20PX;    text-decoration: none;}
+	
+	#SubscriptionViewP1{}
+	.SubscriptionP1-text-head{color: #fff0d6;font-size: 30px;margin: 5% 0%;}
+	.SubscriptionP1-logo{    width: 50%;margin: auto;}
+	.SubscriptionP1-logo img{    width: 100%;margin-top: 25%; }
+	.SubscriptionP1-logo-text a{ color:#fff0d6 !important; text-decoration:none; font-size:35px;    margin-top: 10%;}
+	.SubscriptionP1-back{background: #000; width:100%;    display: inline-block;}
+	.SubscriptionP1-back a {    float: left;    background: #000;    margin: 4% 0%;}
+	.SubscriptionP1-back img{    width: 80%;}
+	
+		#SubscriptionViewP2{}
+	.SubscriptionP2-text-head{color: #fff0d6;font-size: 30px;margin: 5% 0%;}
+	.SubscriptionP2-logo{    width: 50%;margin: auto;}
+	.SubscriptionP2-logo img{    width: 100%; }
+	.SubscriptionP2-logo-text{ color:#fff0d6; font-size:35px;}
+	.SubscriptionP2-back{background: #000; width:100%;    display: inline-block;}
+	.SubscriptionP2-back a {    float: left;    background: #000;    margin: 4% 0%;}
+	.SubscriptionP2-back img{    width: 80%;}
+	#PaymentOptions{margin-top: 16%;}
+	.PaymentImage{    margin: 4%;}
+	
+	/* Gift Card*/
+	.GiftCardForm{ margin-top:25%;}
+	.GiftCradNumber{}
+	.GiftCradBtn{}
+	.GiftCardForm span{ background: #ccc;display: block;border-radius: 5px;}
+	.icon_Payment{}
+	.PaymentSuccess{width: 110%;left: 5%;position: relative;}
+	.PaymentSuccess img{    background-size: cover; width: 100%;}
+	.SubscriptionP5-text-head{color: #fff0d6;font-size: 37px;margin: 2% 0%;}
+	.SubscriptionP5-text-date{color: #fff0d6;font-size: 28px; }	
+	.PaymentFinish{    width: 100%;    margin-top: 10%;}
+	.PaymentFinish img{    background-size: cover; width: 100%;}	
+		
+		
+		/*  VideoPlay*/
+	.VideoPlay-cont{width: 100%;
+    display: block;
+    float: right;
+    margin: 1% auto;}
+	.VideoPlay-cont img {    width: 100%; position: relative; } 
+	.VideoPlay-text-cont { width: 100%;   display: inline;    float: right;    text-align: right; background:#151719; }
+	.VideoPlay-cont p{color: #d6c3a8;font-size: 16px;    text-align: right;    margin: 0 5%; }
+	.VideoPlay-text-head1 { color: #fff;font-size: 18px;text-align: center;    margin: 2% 0% 1% 0%;}
+	.VideoPlay-text-head2 { color: #fff;font-size: 14px;text-align: center;    margin: 1% 0% 1% 0%;}
+	.VideoPlay-text-button { text-align:center; margin: 1% 0% 1% 0%; }
+	.VideoPlay-text-button img {width: 80%;    }
+	
+	
+			
+.home-four-big-box{ width:98%; display:inline-block; }
+.home-single-big-box{ width: 49%;display: inline-block;}
+.home-single-big-box img{ width: 100%; background-size:cover;}
+
+.home-four-small-box{ width:98%; display:inline-block; }
+.home-single-small-box{ width: 49%;display: inline-block;}
+.home-single-small-box img{ width: 100%;}	
+    
+	
+	
+/* LatestSongsList*/
+.latest-song-listview-cont {
+    width: 100%;
+    display: block;
+    float: left;
+    margin: 2% auto; border-bottom: 2px solid #808080;}
+.latest-song-listview-cont img { width: 12%;border-radius: 30px;margin-bottom: 2%;
+    display: inline;
+    float: left;
+    left: 4%;
+    position: relative; } 
+	.latest-song-listview-text-cont { width: 80%; margin-top: 2%;
+    display: inline;
+    float: right;
+    text-align: left; }
+	.latest-song-listview-text-head { color:#eeeeee; }
+	.latest-song-listview-text-desc { color:#ceb8a2; }
+	
+.cp-container{ display:inline-block;}
+/*.cp-container-bottom{display: inline !important;position: relative !important; }	
+#cp-circle-control-bottom{display: inline !important;position: relative !important;}
+#cp-controls-bottom{    display: inline !important;position: relative !important;}
+/*#cp-controls-bottom li a{ display:inline; position:relative;max-width: 52px;}
+#cp-controls-bottom li{display: inline;position: relative;}*/
+#RightSong{display: inline-block;float: right;position: relative;margin-top: 23%;}
+#LeftSong{display: inline-block;float: left;position: relative;margin-top: 23%;}
+#RightSong img{}
+#LeftSong img{}	
+
+
+
+
+/*  ZZZZZZZZ */
+
+/* PlayNOW*/
+.footer_ganaric{
+position: fixed;
+    bottom: 0px;
+    height: 60px;
+    z-index: 1000;
+    text-align: center;
+    background: #333;
+    width: 100%;
+    display: none;
+    margin: 0 auto;
+/*    left: 1%;
+    right: 1%;*/
+}
+
+.NowPlayLeft{width: 50%; display:inline-block; float: left;}
+.NowPlayRight{
+	width: 45%;
+    display: inline-block;
+    float: right;
+    font-size: 85%;
+    padding-right: 10px;
+	}
+.NowPlayClose{    width: 20%;display: inline-block;}
+.NowPlayClose img{background-size: cover;max-width: 25px; margin: -27px 15px 0px;
+    display: block;}
+.NowPlayPause{    width: 30%;display: inline-block;}
+.NowPlayPause img {max-width: 34px; max-height:34px;background-size: cover;margin-top: 15px;}
+.NowPlayIndicator{    width: 45%;display: inline-block;}
+.NowPlayIndicator img{ width: 100px;
+    height: 50px;
+    background: 100px 100px;
+    float: left;}
+.NowPlayTimeBar{ color:#fff; text-align:right; padding-top: 10px;}
+.NowPlayTrackName{    color: #fff;text-align: right;}
+		  
+		  
+/*Login Page*/
+#login-form{
+color:#fff;
+}
+#login h1{
+color:#fff;
+}
+
+.ui-slider-inneroffset{
+display:none;	
+}
+@media (min-width: 28em){
+.ui-field-contain>label, .ui-field-contain .ui-controlgroup-label, .ui-field-contain>.ui-rangeslider>label {
+    float: left;
+     width: auto !important;
+    margin: .5em 2% 0 0;
+}
+}
+@media (min-width: 28em){
+.ui-field-contain>label~[class*=ui-], .ui-field-contain .ui-controlgroup-controls {
+    float: right;
+    /* width: 78%; */
+	border-radius: 20px;	
+	    border: none;
+}
+}
+.ui-field-contain{
+float:right;	
+}
+
+.forget-password{
+clear:both;
+background-image: url('../image/android/Lost-Password@2x.png'); 
+background-repeat:no-repeat; 
+    width: 100%;
+    height: 19vw;
+    margin: 0 auto;
+	background-position: center top;
+	background-size: contain;
+}
+#login-form .ui-btn{
+background-image: url('../image/android/Sign-in-btn@2x.png') !important; 
+background-repeat:no-repeat !important; 
+    width: 93% !important;
+        height: 17vw; !important;
+    margin: 0 auto !important;	
+	    margin: 0 auto;
+	background-position: center top;
+	background-size: contain;
+	border:none;
+}
+.ui-page-theme-a .ui-btn:active{
+    background-color:transparent !important
+}
+
+.devider{
+	background-image: url('../image/android/Divider-line@2x.png') !important; 
+background-repeat:no-repeat !important; 
+    width: 100% !important;
+        height: 5vw; !important;
+    margin: 0 auto !important;	
+	    margin: 0 auto;
+	background-position: center top;
+	background-size: contain;
+	border:none;
+}
+.loginsocial{
+margin:30px 0px	
+}
+
+.registernow{
+clear:both;
+background-image: url('../image/android/regiester-button@2x.png'); 
+background-repeat:no-repeat; 
+    width: 100%;
+    height: 19vw;
+    margin: 20px auto 50px;
+	background-position: center top;
+	background-size: contain;
+}
+
+/*     */
+#z_menu-centered {
+    padding: 20px 0 0 0;
+}
+#z_menu-centered ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+#z_menu-centered li {
+    display: inline;
+    list-style: none;
+    padding: 10px 5px 15px 5px;
+}
+#z_menu-centered li img {
+    width: 30%;
+    height: auto;
+	max-width: 135px;
+}
+
+
+ul.rig {
+	list-style: none;
+	font-size: 0px;
+	margin-left: -2.5%; /* should match li left margin */
+	    padding: 0;
+		    margin-top: 4%;
+}
+ul.rig li {
+	    display: inline-block;
+    padding: 0px 0px 0px 0px;
+    margin: 0 0 20px 2.5%;
+    background: #000;
+    /* border: 1px solid #ddd; */
+    font-size: 16px;
+    font-size: 1rem;
+    vertical-align: middle;
+    /* box-shadow: 0 0 5px #ddd; */
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: relative;
+}
+ul.rig li img {
+	    max-width: 100%;
+    height: auto;
+    margin: 0px 0 0px;
+}
+ul.rig li h3 {
+	    margin: 0px 0 0px;
+    color: #836f57;
+    position: relative;
+    top: 15px;font-size: 10px;
+    font-weight: normal;
+}
+ul.rig li p {
+	font-size: .9em;
+	line-height: 1.5em;
+	color: #999;
+}
+/* class for 2 columns */
+ul.rig.columns-2 li {
+	width: 47.5%; /* this value + 2.5 should = 50% */
+}
+/* class for 3 columns */
+ul.rig.columns-3 li {
+	width: 30.83%; /* this value + 2.5 should = 33% */
+}
+/* class for 4 columns */
+ul.rig.columns-4 li {
+	width: 22.5%; /* this value + 2.5 should = 25% */
+}
+
+/*-----------singer -------------*/
+
+
+ul.singer {
+	list-style: none;
+	font-size: 0px;
+	margin-left: -2.5%; /* should match li left margin */
+	    padding: 0;
+		    margin-top: 4%;
+			margin-bottom:50px;
+			
+}
+ul.singer li {
+	    display: inline-block;
+    padding: 10px 10px 0px 10px;
+    margin: 0 0 10px 2.5%;
+    /* border: 1px solid #ddd; */
+    font-size: 16px;
+    font-size: 1rem;
+    vertical-align: middle;
+    /* box-shadow: 0 0 5px #ddd; */
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    position: relative;
+}
+ul.singer li img {
+	    max-width: 100%;
+    height: auto;
+    margin: 10px 0 0px;
+}
+ul.singer li h3 {
+	    margin: 10px 0 0px;
+    color: #fff;
+	font-weight:bold;
+}
+ul.singer li p {
+	margin:7px 0 0px;
+	font-size: .9em;
+	line-height: 1.5em;
+	color: #ceb8a2;
+}
+/* class for 2 columns */
+ul.singer.singerinfo-2 li {
+	width: 47.5%; /* this value + 2.5 should = 50% */
+}
+/* class for 3 columns */
+ul.singer.singerinfo-3 li {
+	width: 30.83%; /* this value + 2.5 should = 33% */
+}
+/* class for 4 columns */
+ul.singer.singerinfo-4 li {
+	width: 22.5%; /* this value + 2.5 should = 25% */
+}
+
+/* Music Player*/
+.belowheader {
+    width: 98%;
+    height: auto;
+    margin: 5% auto;
+}
+.belowheader img {
+    width: 100%;
+    background-size: 50%;
+}
+
+.cp-container{ margin:5% auto 0 !important;}
+.playmusicname{    color: #fff;font-size: 30px;margin-top: 1%;}
+.playvideoname{    color: #bd9562;font-size: 30px;margin-top: 1%;}
+.sharebutton ul{ padding:0;}
+.sharebutton ul li {
+    list-style: none;
+    margin: 0;
+    color: #EB6F77;
+    padding: 0px 4%;
+    display: inline-block;
+    white-space: nowrap;
+    text-align: center;
+}
+#GZoomData{}
+#GZoomData img{ width:100%; background-size:cover;}
+.sharebutton ul li a img{ background-size:cover;    width: 100%;max-width: 52px; }
+#VideoPlayData{ display:inline-block;}
+.controlbutton {margin-top: 10%;}
+.controlbutton li a.volume img{    background-size: cover;max-width: 30px;}
+.controlbuttonV {margin-top: 5%;}
+.pp-img{ max-width: 65px;}
+.pp-img img{ width:100%; background-size:cover;}
+.controlbutton ul{ padding:0;}
+.controlbutton ul li {
+    list-style: none;
+    margin: 0;    vertical-align: middle;
+    color: #EB6F77;
+    padding: 0px 4%;
+    display: inline-block;
+    white-space: nowrap;
+    text-align: center;
+}
+.controlbuttonV ul{ padding:0;}
+.controlbuttonV ul li {
+    list-style: none;
+    margin: 0; vertical-align: middle;
+    color: #EB6F77;
+    padding: 0px 4%;
+    display: inline-block;
+    white-space: nowrap;
+    text-align: center;
+}
+
+.owl-theme .owl-controls{ display:none;}
+.hr-sep{color: #bd9562;
+    background: #bd9562;
+    display: inline-block; 
+    width: 100%;
+    height: 1px;
+	margin: 0px 0px 10px;
+	}
+
+
+
+/* Footerv*/
+.ui-navbar ul{ background:#212224;     max-width: 530px;
+    margin: 0 auto;}
+.ui-btn.ui-btn-active{ background:none !important;}
+.ui-btn{ border:none;}
+.ui-icon-bars:after{ background:none; /*background-image: url('../image/android/menu-btn@2x.png');*/ }
+#nav-panel1 img{ display:block; width:100%;}
+li.ui-block-a { }
+li.ui-block-a a { padding:0 !important; }
+li.ui-block-a img{}
+li.ui-block-b { }
+li.ui-block-b a { padding:0 !important; }
+li.ui-block-b img{}
+li.ui-block-c { }
+li.ui-block-c a { padding:0 !important; }
+li.ui-block-c img{}
+li.ui-block-d { }
+li.ui-block-d a { padding:0 !important; }
+li.ui-block-d img{}
+/*--------------------start-----------------------*/
+.heading{
+	text-align: right;
+    color: #d5c095;
+    font-size: 160%;
+	    border-bottom: 4px solid;
+    width: 50%;
+    padding-bottom: 20px;	
+}
+.singer_info{
+	    text-align: right;
+    color: #d5c095;
+    font-size: 130%;
+    padding: 10px 0px;	
+}
+
+.infography img {
+    width: 100%;
+    position: relative;
+	margin: 1% auto;
+}
+.contactus{
+margin: 3% 0px;
+}
+.contactsocial{
+	margin: 50px 0 10%;
+    float: right;
+    width: 100%;
+}
+.contactsocial ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+    display: block;
+    border: 0;
+    max-width: 100%;
+    overflow: visible;
+}
+.contactsocial ul li{
+        width: 16%;
+    float: right;
+}
+.contactsocial ul li img{
+         width: 66%;
+}
+.singer_info_detail{
+	text-align:justify;
+    color: #d5c095;
+    font-size: 130%;
+    padding: 10px 0px;
+}
+
+.wishdel{ display:inline-block; float:left;}
+.socialmedia-buttons img{ max-height:35px;}

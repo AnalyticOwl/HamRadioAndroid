@@ -1,0 +1,35 @@
+*.iml
+.gradle
+/local.properties
+/.idea
+/.idea/workspace.xml
+/.idea/libraries
+.DS_Store
+/build
+/captures
+.externalNativeBuild
+
+
+# Android
+platforms/android/assets/www
+platforms/android/bin/
+platforms/android/gen/
+platforms/android/res/xml/config.xml
+
+# iOS
+platforms/ios/build/
+platforms/ios/CordovaLib/build/
+platforms/ios/www
+platforms/ios/MyPace/config.xml
+platforms/ios/.staging
+
+# Emulator logs
+platforms/ios/cordova/console.log
+
+Android/bin/ 
+Android/gen/ 
+Android/assets/
+
+node_modules/
+hooks/
+plugins/

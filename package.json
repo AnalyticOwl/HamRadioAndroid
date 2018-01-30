@@ -1,0 +1,16 @@
+{
+  "name": "com.mehadhamad",
+  "version": "0.0.1",
+  "displayName": "ميحد حمد",
+  "cordova": {
+    "platforms": [
+      "android",
+      "ios"
+    ],
+    "plugins": {}
+  },
+  "dependencies": {
+    "cordova-android": "~6.3.0",
+    "cordova-ios": "~4.5.4"
+  }
+}
