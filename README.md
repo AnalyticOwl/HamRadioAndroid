@@ -1,4 +1,4 @@
-#HamsterEq
+# HamsterEq
 =============
 Unless otherwise specified, source code directories will have the following structure:
 * /src - primary directory for Source code.
