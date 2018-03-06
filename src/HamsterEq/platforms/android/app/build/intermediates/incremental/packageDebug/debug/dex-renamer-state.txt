@@ -1,0 +1,7 @@
+#Fri Mar 02 16:50:24 PKT 2018
+base.0=G\:\\HamsterEq\\HamsterEq\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\132
+path.1=classes2.dex
+renamed.1=classes2.dex
+path.0=classes.dex
+renamed.0=classes.dex
+base.1=G\:\\HamsterEq\\HamsterEq\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\132

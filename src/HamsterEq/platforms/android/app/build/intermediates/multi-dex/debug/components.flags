@@ -1,0 +1,45 @@
+-injars 'G:\HamsterEq\HamsterEq\platforms\android\app\build\intermediates\transforms\desugar\debug\3'(**.class)
+-injars 'G:\HamsterEq\HamsterEq\platforms\android\app\build\intermediates\transforms\desugar\debug\0.jar'(**.class)
+-injars 'G:\HamsterEq\HamsterEq\platforms\android\app\build\intermediates\transforms\desugar\debug\2.jar'(**.class)
+-injars 'G:\HamsterEq\HamsterEq\platforms\android\app\build\intermediates\processing-tools\runtime-deps\debug\desugar_try_with_resources.jar'(**.class)
+-outjars 'G:\HamsterEq\HamsterEq\platforms\android\app\build\intermediates\multi-dex\debug\componentClasses.jar'
+
+-libraryjars 'C:\Users\Home\AppData\Local\Android\Sdk\build-tools\27.0.3\lib\shrinkedAndroid.jar'
+
+-forceprocessing
+-dontoptimize
+-dontobfuscate
+-dontusemixedcaseclassnames
+-dontpreverify
+-dontnote **
+-dontwarn **
+-printconfiguration 'G:\HamsterEq\HamsterEq\platforms\android\app\build\intermediates\multi-dex\debug\components.flags'
+
+
+# Referenced at G:\HamsterEq\HamsterEq\platforms\android\app\build\intermediates\manifests\full\debug\AndroidManifest.xml:28
+-keep class android.support.multidex.MultiDexApplication {
+    <init>(...);
+}
+
+-keep public class * extends android.app.Instrumentation {
+    <init>();
+}
+
+-keep public class * extends android.app.Application {
+    <init>();
+    void attachBaseContext(android.content.Context);
+}
+
+-keep public class * extends android.app.backup.BackupAgent {
+    <init>();
+}
+
+-keep public class * extends java.lang.annotation.Annotation {
+    <fields>;
+    <methods>;
+}
+
+-keep class com.android.tools.ir.** {
+    <fields>;
+    <methods>;
+}
