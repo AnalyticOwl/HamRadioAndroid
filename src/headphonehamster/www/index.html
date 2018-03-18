@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<!--<html dir="rtl" lang="ar" >-->
+
+<head>
+    <meta charset="utf-8">
+    <title>Songs</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=Open+Sans:300,400,700">
+    <link rel="stylesheet" type="text/css" href="lib/fontawsome/font-awesome.min.css">
+    <link rel="stylesheet" href="lib/jquerymobile/jquery.mobile-1.4.5.css">
+    <link rel="stylesheet" href="css/index.css">
+    <!-- <link rel="stylesheet" href="css/font-awesome.min.css"> -->
+    <script type="text/javascript" src="lib/jquery/jquery.js"></script>
+    <script type="text/javascript" src="lib/jquerymobile/jquery.mobile-1.4.5.js"></script>
+    <script type="text/javascript" src="lib/fontawsome/fontawesome.js"></script>
+    <script src="lib/wavesurfer/wavesurfer.min.js"></script>
+    <script type="text/javascript" src="js/app.js"></script>
+    <script type="text/javascript" src="js/Player.js"></script>    
+    <script type="text/javascript" src="lib/ID3/id3-minimized.js"></script>
+    <script type="text/javascript" src="js/main.js"></script>
+    <script type="text/javascript" src="js/index.js"></script>
+    
+ 
+    <!--/* Music Player*/-->
+    <!-- <script type="text/javascript" src="js/function.js"></script> -->
+</head>
+
+<body>
+    <!--/* Login Page Start*/-->
+   
+        <!-- <div id="logo_wrap" class="logo_wrap wrapper" data-theme="b" data-role="page">
+            <div id="logo_img" class="logo_img">
+                <img style="width:90%" src="image/header-logo.png">
+            </div>
+            <div class="nav_btn" style="    margin-right: 33px ;  margin-top: 44px   ">
+
+                <div id="tabs" data-role="tabs">
+                    <div data-role="navbar">
+                        <ul>
+                            <li>
+                                <a class="ui-btn-active" href="#Login_Page" data-ajax="false">Sgin In</a>
+                            </li>
+                            <li>
+                                <a href="#Reg_Page" data-ajax="false">Sgin Up</a>
+                            </li>
+                        </ul>
+                    </div>
+
+                    <div id="Login_Page" class="ui-body-d ui-content">
+                        <input Type="email" id='Get_User_email' value="" placeholder="abc@email.com" data-clear-btn="true">
+                        <input Type="password" id='Get_User_pwd' value="" placeholder="Password" data-clear-btn="true">
+                        <button class="btn btn-ui" id="loginbtn">Sgin In</button>
+                    </div>
+
+                    <div id="Reg_Page">
+                        <input Type="text" id='Reg_User_name' value="" placeholder="User Name" data-clear-btn="true">
+                        <input Type="email" id='Reg_User_Email' value="" placeholder="abc@email.com" data-clear-btn="true">
+                        <input Type="password" id='Reg_User_pwd' value="" placeholder="Password" data-clear-btn="true">
+                        <button class="btn btn-ui" id="Regbtn">Sgin Up</button>
+                    </div>
+                    <input Type="hidden" id='User_Status' value="">
+                    <input Type="hidden" id='User_Id' value="">
+                </div>
+            </div>
+        </div> -->
+   
+        <div data-role="page" id="logo_wrap" data-theme="b" class="background-login-image">
+            <!-- <div data-role="header"></div> -->
+            <div data-role="header" class="login-image-container">
+                <img class="ui-title login-image" src="image/logo-singup.png">    
+            </div>
+            <div data-role="main">
+                <div data-role="tabs" id="tabIndex">
+                    <div data-role="navbar" class="navbar_styling">
+                        <ul>
+                            <li>
+                                <a id="tap_signin" class="active_button_style ui-btn-active" href="#Login_Page" data-ajax="false">Sign In</a>
+                            </li>
+                            <li>
+                                <a id="tap_signup" href="#Reg_Page" class="active_button_style" data-ajax="false">Sign Up</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <div id="Login_Page" class="ui-body-d ui-content">
+    
+                        <div class="field-container" data-role="fieldcontainer">
+    
+    
+                            <i class=" fa fa-envelope png_icons_mail" aria-hidden="false"></i>
+                            <div class="input_login">
+                                <input Type="email" id='Get_User_email' value="" placeholder="Email Address" data-clear-btn="true">
+                            </div>
+                        </div>
+    
+                        <div class="field-container" data-role="fieldcontainer">
+    
+                            <i class="fa fa-unlock-alt png_icons" aria-hidden="true"></i>
+                            <div class="input_login">
+                                <input Type="password" id='Get_User_pwd' value="" placeholder="Password" data-clear-btn="true">
+                            </div>
+                        </div>
+                        <form class="check_box_setting">
+                            <label class="remember_me">
+                                <input type="checkbox" id="RememberMe" name="checkbox-0 ">
+                                <p> Remember Me </p>
+                            </label>
+                        </form>
+                        <button class="btn btn-ui button_colour button_login_size" id="loginbtn">Sign In</button>
+                        <div class="forget_password" links>
+                            <h5>Forget Password?</h5>
+                        </div>
+                    </div>
+                    <div id="Reg_Page" class="ui-body-d ui-content">
+    
+                        <div class="field-container" data-role="fieldcontainer">
+                            <i class="fa fa-user png_icons" aria-hidden="false"></i>
+                            <div class="input_login">
+                                <input Type="text" id='Reg_User_name' value="" placeholder="User Name" data-clear-btn="true">
+                            </div>
+                        </div>
+    
+                        <div class="field-container" data-role="fieldcontainer">
+                            <i class="fa fa-envelope png_icons_mail" aria-hidden="false"></i>
+                            <div class="input_login">
+                                <input Type="email" id='Reg_User_Email' value="" placeholder="Email Address" data-clear-btn="true">
+                            </div>
+                        </div>
+    
+                        <div class="field-container" data-role="fieldcontainer">
+                            <i class="fa fa-unlock-alt png_icons" aria-hidden="true"></i>
+                            <div class="input_login">
+                                <input Type="password" id='Reg_User_pwd' value="" placeholder="Password" data-clear-btn="true">
+                            </div>
+                        </div>
+                        <button class="btn btn-ui button_colour button_login_size" id="Regbtn">Sign Up</button>
+                    </div>
+                </div>
+            </div>
+            <div data-role="footer" class="login-footer">
+    
+    <div class="or_contact_us">
+        <img style="height:1px" src="image/connectus.png" alt="">
+                <h4 class="login_connect_with">OR CONNECT WITH</h4>
+    <img style="height:1px" src="image/connectus.png" alt="">
+            </div>
+    <div class="footer_icon_container">
+                <i class=" fa fa-facebook fotter_icons " aria-hidden="true"> </i>
+                <i class="fa fa-twitter fotter_icons" aria-hidden="true"></i>
+                <i class=" fotter_icons " aria-hidden="true">
+                    <img style="width:33px" src="image/googleplus.png" alt="">
+                </i>
+                </div>
+
+                <div class="footer_text">
+                    <p>By creating an account,you agree to <br> Terms & Condition and Privacy Policy </p>
+                </div>
+            </div>
+    
+        </div>
+    <!-- end of the Login PGE-->
+</body>
+
+</html>
+<!-- 
+<config-file parent="/*" target="AndroidManifest.xml">
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+</config-file> -->

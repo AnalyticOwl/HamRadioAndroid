@@ -1,0 +1,38 @@
+{
+    "logs": [
+        {
+            "outputFile": "/home/home/HamRadioAndroid/HamRadioAndroid/src/headphonehamster/platforms/android/app/build/intermediates/incremental/mergeDebugResources/merged.dir/values-v16/values-v16.xml",
+            "map": [
+                {
+                    "source": "/home/home/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/81d7926302450d46eaf18e0f15a1fe89/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endColumns": "65",
+                        "endOffsets": "116"
+                    }
+                },
+                {
+                    "source": "/home/home/.gradle/caches/transforms-1/files-1.1/appcompat-v7-26.1.0.aar/0e92e34e7144d523ec580394c51b5563/res/values-v16/values-v16.xml",
+                    "from": {
+                        "startLines": "2",
+                        "startColumns": "4",
+                        "startOffsets": "55",
+                        "endLines": "5",
+                        "endColumns": "12",
+                        "endOffsets": "223"
+                    },
+                    "to": {
+                        "startLines": "3",
+                        "startColumns": "4",
+                        "startOffsets": "121",
+                        "endLines": "6",
+                        "endColumns": "12",
+                        "endOffsets": "289"
+                    }
+                }
+            ]
+        }
+    ]
+}
