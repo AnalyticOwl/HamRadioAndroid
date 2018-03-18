@@ -1,0 +1,39 @@
+{
+  "prepare_queue": {
+    "installed": [],
+    "uninstalled": []
+  },
+  "config_munge": {
+    "files": {}
+  },
+  "installed_plugins": {
+    "cordova-plugin-whitelist": {
+      "PACKAGE_NAME": "com.hamstereq.www"
+    },
+    "cordova-plugin-device": {
+      "PACKAGE_NAME": "com.hamstereq.www"
+    },
+    "cordova-plugin-spinner-dialog": {
+      "PACKAGE_NAME": "com.hamstereq.www"
+    },
+    "cordova-plugin-network-information": {
+      "PACKAGE_NAME": "com.hamstereq.www"
+    },
+    "cordova-plugin-android-permissions": {
+      "PACKAGE_NAME": "com.hamstereq.www"
+    },
+    "cordova-plugin-console": {
+      "PACKAGE_NAME": "com.hamstereq.www"
+    },
+    "cordova-plugin-file": {
+      "PACKAGE_NAME": "com.hamstereq.www"
+    },
+    "cordova-plugin-splashscreen": {
+      "PACKAGE_NAME": "com.hamstereq.www"
+    },
+    "cordova.plugins.diagnostic": {
+      "PACKAGE_NAME": "com.hamstereq.www"
+    }
+  },
+  "dependent_plugins": {}
+}
