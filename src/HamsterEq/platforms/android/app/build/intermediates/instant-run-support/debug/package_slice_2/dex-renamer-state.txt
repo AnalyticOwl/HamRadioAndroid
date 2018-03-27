@@ -1,4 +1,0 @@
-#Thu Feb 22 23:35:20 PKT 2018
-base.0=E\:\\Project\\HamsterEq\\platforms\\android\\app\\build\\intermediates\\transforms\\dexMerger\\debug\\116
-path.0=classes.dex
-renamed.0=classes.dex
