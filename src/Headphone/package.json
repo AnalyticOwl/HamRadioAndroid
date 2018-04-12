@@ -1,0 +1,34 @@
+{
+    "name": "com.headphonehamster.www",
+    "displayName": "Headphone",
+    "version": "1.0.0",
+    "description": "A sample Apache Cordova application that responds to the deviceready event.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "Apache Cordova Team",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "cordova-android": "^7.0.0",
+        "cordova-call": "^1.1.3",
+        "cordova-plugin-local-notification": "git+https://github.com/katzer/cordova-plugin-local-notifications.git",
+        "cordova-plugin-local-notifications": "^1.0.0",
+        "cordova-plugin-screen-locker": "^0.2.2",
+        "cordova-plugin-whitelist": "^1.3.3",
+        "cordova-sqlite-storage": "git+https://github.com/litehelpers/Cordova-sqlite-storage.git",
+        "io.gvox.plugin.phonecalltrap": "^0.1.2"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-whitelist": {},
+            "cordova-sqlite-storage": {},
+            "cordova-plugin-screen-locker": {},
+            "cordova-call": {},
+            "io.gvox.plugin.phonecalltrap": {}
+        },
+        "platforms": [
+            "android"
+        ]
+    }
+}
