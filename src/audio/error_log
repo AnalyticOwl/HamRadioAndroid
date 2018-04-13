@@ -1,2 +1,0 @@
-[11-Feb-2018 16:22:57 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\APIController::getprofile() in /home/atif/public_html/audio/app/Http/Controllers/APIController.php on line 288
-[21-Feb-2018 15:08:05 UTC] PHP Fatal error:  Cannot redeclare App\Http\Controllers\APIController::getplaylist() in /home/atif/public_html/audio/app/Http/Controllers/APIController.php on line 509
