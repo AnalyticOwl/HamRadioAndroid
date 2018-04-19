@@ -1,7 +1,7 @@
 $(document).ready(function () {
     SaveLocal("rest", "http://testingserver.net/audio/api");
-    SaveLocal("User_Id", null);
-    SaveSession("User_status", null);
+    // SaveLocal("User_Id", null);
+    // SaveLocal("User_status", null);
     $("#signoutId").hide();
     $("#signinId").show();
     $(document).bind("mobileinit", function () {
@@ -79,7 +79,7 @@ function User_SignIn() {
                     SaveLocal("User_Id", jsonData.data[0].id);
                     SaveLocal("User_Email", jsonData.data[0].email);
                     SaveLocal("User_pwd", user_pwd);
-                    SaveSession("User_status", jsonData.status);
+                    SaveLocal("User_status", jsonData.status);
 
                     $("#email_address").html(jsonData.data[0].email);
                     $("#Username").html(jsonData.data[0].username);
@@ -93,10 +93,10 @@ function User_SignIn() {
                 } else {
                     msg('Invalid email or password');
                     SaveLocal("User_Id", null);
-                    SaveSession("User_status", null);
+                    SaveLocal("User_status", null);
                 }
                 log(GetLocal("User_Id"));
-                log(GetSession("User_status"));
+                log(GetLocal("User_status"));
                 log("Done");
             });
         }
@@ -111,7 +111,8 @@ function User_SignIn() {
 function User_Signout() {
     $("#signoutId").hide();
     $("#signinId").show();
-    SaveSession("User_status", null);
+    SaveLocal("User_status", null);
+    SaveLocal("User_Id", null);
     $("#panelLink").panel("close");
     gotoPage("main");
     $("#backTomain").click();
@@ -142,7 +143,7 @@ $(document).on('click', '#forget_Password', function () {
 });
 $(document).on('click', "#changepwd", function () {
     if (checkConnection()) {
-        if (GetSession("User_status") == "success") {
+        if (GetLocal("User_status") == "success") {
             var forget_data = '{"email":"' + GetLocal("User_Email") + '"}';
             var Url = 'http://testingserver.net/audio/api/forgetpassword';
             var forget_Data = JSON.stringify(JSON.parse(forget_data));

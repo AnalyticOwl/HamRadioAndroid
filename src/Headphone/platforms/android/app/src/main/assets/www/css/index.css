@@ -1367,10 +1367,6 @@ profile_container{
 .folder_Header{
     background-color:#212121; 
 }
-.profile_back img{
-    width: 25px !important;
-    padding: 0 12px;
-}
 .main-class{
     background-color: #ffcc06;
 }
@@ -1436,6 +1432,14 @@ profile_container{
     margin-bottom: 0px;
     width: 44px;
 }
+#profile_reset_all{
+       margin-left: 38px;
+       color: #000;   
+}
+.profile_back img{
+    width: 25px !important;
+    padding: 0 12px;
+}
 .menu_button {
     width: 15% !important;
     display: flex;
@@ -1462,8 +1466,12 @@ profile_container{
     padding: 8px 0!important;
     border-bottom: 1px solid #4e4e4e;
 }
-.audio_list p {
-    font-size: 14px !important;
+.audio_list_name {
+    font-size: 13px !important;
+    color: #b8b8c7;
+}
+.artist_PL{
+    font-size: 11px !important;
     color: #b8b8c7;
 }
 .audio_list_folder {
@@ -1472,11 +1480,14 @@ profile_container{
     padding: 8px 0!important;
     border-bottom: 1px solid #4e4e4e;
 }
-.audio_list_folder p {
-    font-size: 14px !important;
+.audio_list_folder_name{
+    font-size: 13px !important;
     color: #b8b8c7;
 }
-
+.artist_folder{
+    font-size: 11px !important;
+    color: #b8b8c7;
+}
 .song_check {
     width: 38px !important;
     padding-left: 8px;

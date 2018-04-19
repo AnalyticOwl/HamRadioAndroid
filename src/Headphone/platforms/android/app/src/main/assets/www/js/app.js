@@ -126,7 +126,7 @@ function SaveLocal(_key, _val) {
 }
 function GetLocal(_key) {
       var returnValue = localStorage.getItem(_key);
-      log(returnValue);
+      //log(returnValue);
       return returnValue;
 }
 function RemoveLocal(_key) {

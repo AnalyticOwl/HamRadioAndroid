@@ -21,7 +21,7 @@
     <script type="text/javascript" src="js/Player.js"></script>
     <script type="text/javascript" src="js/login.js"></script>
     <script type="text/javascript" src="cordova.js"></script>
-    
+
 </head>
 
 <body>
@@ -68,18 +68,18 @@
                             </a>
                         </div>
                     </div>
-                    <div class="ui-block-b track_play_container">                        
+                    <div class="ui-block-b track_play_container">
                         <div class="middle_panel_setting">
-                                <!-- style="display:none;" -->
+                            <!-- style="display:none;" -->
                             <a id="playprev" style="display:none;">
                                 <img id="prev_img" class="middle_styling" src="image/player-reverse.png" alt="Previous">
                             </a>
                         </div>
                         <div class="middle_panel_setting">
-                                <a id="backward">
-                                    <img id="prev_img" class="middle_styling" src="image/rewind.svg" alt="backward">
-                                </a>
-                            </div>
+                            <a id="backward">
+                                <img id="prev_img" class="middle_styling" src="image/rewind.svg" alt="backward">
+                            </a>
+                        </div>
                         <div class="middle_panel_setting">
                             <a id="play">
                                 <img id="play_img" class="play_image" src="image/Play.svg" alt="play">
@@ -89,7 +89,7 @@
                         <div id="forward" class="middle_panel_setting">
                             <img id="next_img" class="middle_styling" src="image/forward.svg" alt="forward">
                         </div>
-                        <div id="playnext" class="middle_panel_setting" >
+                        <div id="playnext" class="middle_panel_setting">
                             <img style="display:none;" id="next_img" class="middle_styling" src="image/player-farward.png" alt="Next">
                         </div>
                     </div>
@@ -179,7 +179,7 @@
                             </div>
                             <span id="back_to_Folders">
                                 <i class="fa fa-long-arrow-left path_icon"></i>
-                                <div id="path_text" class="path_text">Folder Name</div>
+                                <div id="path_text" class="path_text">Folders</div>
                             </span>
                         </div>
                         <hr class="song_li_hr">
@@ -195,7 +195,7 @@
                             <div>
                                 <i class="fa fa-long-arrow-left path_icon"></i>
                             </div>
-                            <div id="Playlist_text" class="path_text">Playlist Name</div>
+                            <div id="Playlist_text" class="path_text"></div>
                         </div>
                         <!-- <hr class="song_li_hr"> -->
                     </div>
@@ -210,7 +210,10 @@
             </div>
             <div class="profile_back">
                 <img id="back_main" src="image/long-arrow-alt-left.svg" alt=" back-button">
+                <a id="profile_reset_all" class="ui-btn ui-btn-a ui-corner-all ui-shadow ui-btn-inline ui-mini">Reset All</a>
+                <a id="profile_reset" class="ui-btn ui-btn-a ui-corner-all ui-shadow ui-btn-inline ui-mini">Reset Profile</a>
             </div>
+
             <div class="ui-grid-a" style="height:224px">
                 <div class="ui-block-a">
                     <img class="profile_headphone" src="image/headphone-big.png" alt="">
@@ -244,7 +247,7 @@
                     <h4>Add To Existing Playlist</h4>
                     <div class="input_popup_style">
                         <select name="select-native" id="userpalylist">
-                            <option>Select</option>
+                            <option value="selecting" data-placeholder="true">Select</option>
                         </select>
                     </div>
                     <div data-role="controlgroup" class="popup_fotter">
@@ -358,7 +361,7 @@
                     </a>
                 </li>
             </ul>
-        </div>      
+        </div>
     </div>
     <!--panel-->
     <div data-role="panel" id="panelLink" class="panel" data-theme="b" data-display="overlay" data-position="right" style="background-color: #3B3B3B">
@@ -433,7 +436,7 @@
                     <button class="btn btn-ui button_colour button_login_size" id="loginbtn">Sign In</button>
                     <div class="forget_password">
                         <!-- <a>Forget Password?</a> -->
-                        <h5  id="forget_Password">Forget Password?</h5>
+                        <h5 id="forget_Password">Forget Password?</h5>
                     </div>
                 </div>
                 <div id="Reg_Page" class="ui-body-d ui-content">

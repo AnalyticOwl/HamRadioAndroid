@@ -1,0 +1,37 @@
+<div id="equalizer" class="containerEqualizer">
+    <div class="eqStyle_low">
+        <lable class="eqStyle_low_lable">Bass</lable>
+        <input type="range" min="-20" max="20" title="32" id="eqInput32" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+        <input type="range" min="-20" max="20" title="45" id="eqInput45" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+        <input type="range" min="-20" max="20" title="65" id="eqInput65" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+        <input type="range" min="-20" max="20" title="92" id="eqInput92" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+        <input type="range" min="-20" max="20" title="130" id="eqInput130" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+        <input type="range" min="-20" max="20" title="185" id="eqInput185" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+        <input type="range" min="-20" max="20" title="262" id="eqInput262" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+    </div>
+    <hr>
+    <div class="eqStyle_medium">
+        <lable class="eqStyle_medium_lable">Mid</lable>
+        <input type="range" min="-20" max="20" title="373" id="eqInput373" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+        <input type="range" min="-20" max="20" title="529" id="eqInput529" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+        <input type="range" min="-20" max="20" title="751" id="eqInput751" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+        <input type="range" min="-20" max="20" title="1067" id="eqInput1067" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+        <input type="range" min="-20" max="20" title="1515" id="eqInput1515" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+        <input type="range" min="-20" max="20" title="2151" id="eqInput2151" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+    </div>
+    <hr>
+    <div class="eqStyle_heigh">
+        <lable class="eqStyle_high_lable">Treble</lable>
+        <input type="range" min="-20" max="20" title="3054" id="eqInput3054" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+        <input type="range" min="-20" max="20" title="4337" id="eqInput4337" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+        <input type="range" min="-20" max="20" title="6159" id="eqInput6159" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+        <input type="range" min="-20" max="20" title="8745" id="eqInput8745" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+        <input type="range" min="-20" max="20" title="12418" id="eqInput12418" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+        <input type="range" min="-20" max="20" title="17634" id="eqInput17634" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+        <input type="range" min="-20" max="20" title="20000" id="eqInput20000" orient="vertical" style="display: inline-block; -webkit-appearance: slider-vertical; width: 8%; height: 75px;">
+    </div>
+    <hr>
+</div>
+input_labal.setAttribute('for',"eqInput" + filter.frequency.value );
+input_labal.setAttribute('id',"eqInputLabel" + filter.frequency.value );
+$("#eqInputLabel" + filter.frequency.value).html(filter.frequency.value);

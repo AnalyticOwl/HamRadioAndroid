@@ -56,64 +56,64 @@ function InitWavesurfer() {
 
             var EQ = [{
                 f: 32,
-                type: 'lowshelf'
+                type: 'lowshelf'    //  Bass 1
             }, {
                 f: 45,
-                type: 'peaking'
+                type: 'lowshelf'    //  Bass 2
             }, {
                 f: 65,
-                type: 'peaking'
+                type: 'lowshelf'    //  Bass 3
             }, {
                 f: 92,
-                type: 'peaking'
+                type: 'lowshelf'    //  Bass 4
             }, {
                 f: 130,
-                type: 'peaking'
+                type: 'lowshelf'    //  Bass 5
             }, {
                 f: 185,
-                type: 'peaking'
+                type: 'lowshelf'    //  Bass 6
             }, {
                 f: 262,
-                type: 'peaking'
+                type: 'lowshelf'    //  Bass 7
             }, {
                 f: 373,
-                type: 'highshelf'
+                type: 'peaking'   //  Mid 1
             }, {
                 f: 529,
-                type: 'highshelf'
+                type: 'peaking'    //  Mid 2
             }, {
                 f: 751,
-                type: 'highshelf'
+                type: 'peaking'    //  Mid 3
             }, {
                 f: 1067,
-                type: 'highshelf'
+                type: 'peaking'    //  Mid 4
             }, {
                 f: 1515,
-                type: 'highshelf'
+                type: 'peaking'    //  Mid 5
             }, {
                 f: 2151,
-                type: 'highshelf'
+                type: 'peaking'    //  Mid 6
             }, {
                 f: 3054,
-                type: 'highshelf'
+                type: 'highshelf'    //   Treble 1
             }, {
                 f: 4337,
-                type: 'highshelf'
+                type: 'highshelf'    //   Treble 2
             }, {
                 f: 6159,
-                type: 'highshelf'
+                type: 'highshelf'   //   Treble 3
             }, {
                 f: 8745,
-                type: 'highshelf'
+                type: 'highshelf'   //  Treble 4
             }, {
                 f: 12418,
-                type: 'highshelf'
+                type: 'highshelf'   //   Treble 5
             }, {
                 f: 17634,
-                type: 'highshelf'
+                type: 'highshelf'   //   Treble 6
             }, {
                 f: 20000,
-                type: 'highshelf'
+                type: 'highshelf'   //   Treble 7
             }];
 
             // Create filters
@@ -148,22 +148,22 @@ function InitWavesurfer() {
             medium_div.appendChild(medium_lable);
             high_div.appendChild(high_lable);
 
-            low_lable.innerHTML = "Treble";
+            low_lable.innerHTML = "Bass";
             medium_lable.innerHTML = "Mid";
-            high_lable.innerHTML = "Bass";
+            high_lable.innerHTML = "Treble";
 
-            filters.forEach(function (filter) {
+            filters.forEach(function (filter) {                
                 var input = document.createElement('input');
                 window.wavesurfer.util.extend(input, {
                     type: 'range',
-                    min: -40,
-                    max: 40,
+                    min: -20,
+                    max: 20,
                     value: 0,
                     title: filter.frequency.value,
-                    id: "eqInput" + filter.frequency.value,
+                    id: "eqInput" + filter.frequency.value                   
                 });
                 if (index < 7) {
-                    log("less 7 index: " + index);
+                    log("less 7 index: " + index);                   
                     low_div.appendChild(input);
                     input.style.display = 'inline-block';
                     input.setAttribute('orient', 'vertical');
@@ -172,7 +172,7 @@ function InitWavesurfer() {
                         width: '8%',
                         height: '75px'
                     });
-                    if (index == 6) {
+                    if (index == 6) {                      
                         low_div = document.createElement('hr');
                     }
                     container.appendChild(low_div);
