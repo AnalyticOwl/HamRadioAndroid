@@ -1,11 +1,12 @@
 $(document).ready(function () {
     SaveLocal("rest", "http://testingserver.net/audio/api");
-    // SaveLocal("User_Id", null);
-    // SaveLocal("User_status", null);
     $("#signoutId").hide();
     $("#signinId").show();
     $(document).bind("mobileinit", function () {
         $.mobile.ajaxEnabled = false;
+    });   
+    jQuery(function () {
+        $("#panelLink").enhanceWithin().panel();
     });
     try {
         if (GetLocal("Rm_chkBox") == "true") {
@@ -17,10 +18,7 @@ $(document).ready(function () {
                 $('#Get_User_pwd').val(savedPwd);
             }
         }
-    } catch (exception) {
-        elog(exception);
-    }
-
+    } catch (exception) { elog(exception);} 
     $("#Regbtn").on('click', function () {
         User_SignUp();
     });
@@ -79,15 +77,13 @@ function User_SignIn() {
                     SaveLocal("User_Id", jsonData.data[0].id);
                     SaveLocal("User_Email", jsonData.data[0].email);
                     SaveLocal("User_pwd", user_pwd);
+                    SaveLocal("Username", jsonData.data[0].username);
                     SaveLocal("User_status", jsonData.status);
-
                     $("#email_address").html(jsonData.data[0].email);
                     $("#Username").html(jsonData.data[0].username);
-
                     $("#signoutId").show();
                     $("#signinId").hide();
-                    gotoPage("main");
-                    // $("#equalizer_profile").click();
+                    gotoPage("main");                    
                     GetAllEqualizerProfiles();
                     sending_to_server();
                 } else {
@@ -99,11 +95,7 @@ function User_SignIn() {
                 log(GetLocal("User_status"));
                 log("Done");
             });
-        }
-
-        catch (exception) {
-            elog(exception);
-        }
+        } catch (exception) { elog(exception); }
     } else {
         msg("No internet connection");
     }
@@ -119,7 +111,6 @@ function User_Signout() {
     $("#email_address").html("Email Address");
     $("#Username").html("Username");
 }
-
 $(document).on('click', '#forget_Password', function () {
     try {
         var user_email = $("#Get_User_email").val();
@@ -136,10 +127,7 @@ $(document).on('click', '#forget_Password', function () {
         } else {
             msg('Please Enter your Email');
         }
-    }
-    catch (exception) {
-        elog(exception)
-    }
+    }catch (exception) { elog(exception)}     
 });
 $(document).on('click', "#changepwd", function () {
     if (checkConnection()) {
@@ -161,7 +149,6 @@ $(document).on('click', "#changepwd", function () {
         msg("No internet connection");
     }
 });
-
 // SaveLocal("shuffle", "off");
 // SaveLocal("repeat", "off");
 // SaveLocal("currDirLen",dir_counter);
@@ -181,5 +168,6 @@ $(document).on('click', "#changepwd", function () {
 // SaveLocal("User_Id", jsonData.data[0].id);
 // SaveLocal("User_Email", jsonData.data[0].email);
 // SaveLocal("User_pwd", user_pwd);
+// SaveLocal("Username", jsonData.data[0].username);
 // SaveLocal("rest", "http://testingserver.net/audio/api");
 // SaveLocal("Rm_chkBox", "true");

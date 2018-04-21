@@ -1,11 +1,12 @@
 $(document).ready(function () {
     SaveLocal("rest", "http://testingserver.net/audio/api");
-    SaveLocal("User_Id", null);
-    SaveSession("User_status", null);
     $("#signoutId").hide();
     $("#signinId").show();
     $(document).bind("mobileinit", function () {
         $.mobile.ajaxEnabled = false;
+    });   
+    jQuery(function () {
+        $("#panelLink").enhanceWithin().panel();
     });
     try {
         if (GetLocal("Rm_chkBox") == "true") {
@@ -17,10 +18,7 @@ $(document).ready(function () {
                 $('#Get_User_pwd').val(savedPwd);
             }
         }
-    } catch (exception) {
-        elog(exception);
-    }
-   
+    } catch (exception) { elog(exception);} 
     $("#Regbtn").on('click', function () {
         User_SignUp();
     });
@@ -79,31 +77,25 @@ function User_SignIn() {
                     SaveLocal("User_Id", jsonData.data[0].id);
                     SaveLocal("User_Email", jsonData.data[0].email);
                     SaveLocal("User_pwd", user_pwd);
-                    SaveSession("User_status", jsonData.status);
-
+                    SaveLocal("Username", jsonData.data[0].username);
+                    SaveLocal("User_status", jsonData.status);
                     $("#email_address").html(jsonData.data[0].email);
                     $("#Username").html(jsonData.data[0].username);
-
                     $("#signoutId").show();
                     $("#signinId").hide();
-                    gotoPage("main");
-                   // $("#equalizer_profile").click();
+                    gotoPage("main");                    
                     GetAllEqualizerProfiles();
                     sending_to_server();
                 } else {
                     msg('Invalid email or password');
                     SaveLocal("User_Id", null);
-                    SaveSession("User_status", null);
+                    SaveLocal("User_status", null);
                 }
                 log(GetLocal("User_Id"));
-                log(GetSession("User_status"));
+                log(GetLocal("User_status"));
                 log("Done");
             });
-        }
-
-        catch (exception) {
-            elog(exception);
-        }
+        } catch (exception) { elog(exception); }
     } else {
         msg("No internet connection");
     }
@@ -111,38 +103,35 @@ function User_SignIn() {
 function User_Signout() {
     $("#signoutId").hide();
     $("#signinId").show();
-    SaveSession("User_status", null);
+    SaveLocal("User_status", null);
+    SaveLocal("User_Id", null);
     $("#panelLink").panel("close");
     gotoPage("main");
     $("#backTomain").click();
     $("#email_address").html("Email Address");
     $("#Username").html("Username");
 }
-
 $(document).on('click', '#forget_Password', function () {
     try {
         var user_email = $("#Get_User_email").val();
         if (user_email != 0) {
             var email_change_data = '{"email":"' + user_email + '"}';
             var Url = 'http://testingserver.net/audio/api/forgetpassword';
-            var api_data = JSON.stringify(JSON.parse(email_change_data));           
-                var api_link = PostAjax(Url, api_data);
-                api_link.done(function (result) {
-                    log(result);
-                    msg('We have sent an email to Your Email Address.Click the link in  the email to reset your password');
-                    log('Forget Email Send');
-                });
-           }else {
+            var api_data = JSON.stringify(JSON.parse(email_change_data));
+            var api_link = PostAjax(Url, api_data);
+            api_link.done(function (result) {
+                log(result);
+                msg('We have sent an email to Your Email Address.Click the link in  the email to reset your password');
+                log('Forget Email Send');
+            });
+        } else {
             msg('Please Enter your Email');
         }
-    }
-    catch (exception) {
-        elog(exception)
-    }
+    }catch (exception) { elog(exception)}     
 });
-$(document).on('click',"#changepwd", function () {
+$(document).on('click', "#changepwd", function () {
     if (checkConnection()) {
-        if (GetSession("User_status") == "success") {
+        if (GetLocal("User_status") == "success") {
             var forget_data = '{"email":"' + GetLocal("User_Email") + '"}';
             var Url = 'http://testingserver.net/audio/api/forgetpassword';
             var forget_Data = JSON.stringify(JSON.parse(forget_data));
@@ -160,26 +149,25 @@ $(document).on('click',"#changepwd", function () {
         msg("No internet connection");
     }
 });
-
-// SaveSession("shuffle", "off");
-// SaveSession("repeat", "off");
-// SaveSession("mainPath", dirURL);
-// SaveSession("currDirName",currDir);
-// SaveSession("currDirLen",dir_counter);
-// SaveSession("currDirSonglen",song_counter);
-// SaveSession("song_ID", song_ID);
-// SaveSession("playlist_ID", playlistID);
-// SaveSession("curr_profile_ID", profileID);
-// SaveSession("SongURL", current_song);
-// SaveSession("songName", tags.title.replace(/\s+/g, '_'));
-// SaveSession("currPLName",playlist_name);
-// SaveSession("currPLlen",song_len);
-// SaveSession("profileId", _Profile_id.toString());
-// SaveSession("User_status", jsonData.status);
-// SaveSession("User_status", null);
-
+// SaveLocal("shuffle", "off");
+// SaveLocal("repeat", "off");
+// SaveLocal("currDirLen",dir_counter);
+// SaveLocal("currDirSonglen",song_counter);
+// SaveLocal("song_ID", song_ID);
+// SaveLocal("playlist_ID", playlistID);
+// SaveLocal("curr_profile_ID", profileID);
+// SaveLocal("SongURL", current_song);
+// SaveLocal("songName", tags.title.replace(/\s+/g, '_'));
+// SaveLocal("currPLName",playlist_name);
+// SaveLocal("currPLlen",song_len);
+// SaveLocal("selected_profileId", _Profile_id.toString());
+// SaveLocal("User_status", jsonData.status);
+// SaveLocal("User_status", null);
+// SaveLocal("currDirName",currDir);
+// SaveLocal("mainPath", dirURL);
 // SaveLocal("User_Id", jsonData.data[0].id);
 // SaveLocal("User_Email", jsonData.data[0].email);
 // SaveLocal("User_pwd", user_pwd);
+// SaveLocal("Username", jsonData.data[0].username);
 // SaveLocal("rest", "http://testingserver.net/audio/api");
 // SaveLocal("Rm_chkBox", "true");

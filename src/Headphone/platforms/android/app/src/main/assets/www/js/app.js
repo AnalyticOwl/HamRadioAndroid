@@ -1,8 +1,7 @@
 function log(_message, strConcat) {
       if (strConcat) {
             console.log(strConcat + " " + _message);
-      }
-      else {
+      } else {
             console.log(_message);
       }
 }
@@ -17,8 +16,7 @@ function jlog(_message, strConcat) {
       _message = JSON.stringify(_message);
       if (strConcat) {
             console.log(strConcat + " " + _message);
-      }
-      else {
+      } else {
             console.log(_message);
       }
 }
@@ -84,12 +82,13 @@ function gotoPage(_pageName) {
       if (_pageName.indexOf(".html") > 0) {
             log("going to html page");
             window.location.href = _pageName;
-      }
-      else {
+      } else {
             log(_pageName, "going to inner page");
             $.mobile.changePage("#" + _pageName, { allowSamePageTransition: true });
-            //$.mobile.navigate( "#" + _pageName );
       }
+}
+function goback() {
+      parent.history.back();
 }
 function openDialog(_dialogName) {
       log(_dialogName, "going to dialog:");
@@ -119,43 +118,32 @@ function SaveLocal(_key, _val) {
             log(_key, "key=");
             log(_val, "val=");
             localStorage.setItem(_key, _val);
-      }
-      catch (exception) {
-            elog(exception);
-      }
+      } catch (exception) { elog(exception); }
 }
 function GetLocal(_key) {
-      var returnValue = localStorage.getItem(_key);
-      //log(returnValue);
-      return returnValue;
+      try {
+            var returnValue = localStorage.getItem(_key);
+            //log(returnValue);
+            return returnValue;
+      } catch (exception) { elog(exception); }
 }
 function RemoveLocal(_key) {
-      localStorage.removeItem(_key);
+      try {
+            localStorage.removeItem(_key);
+      } catch (exception) { elog(exception); }
 }
 function SaveSession(_key, _val) {
       try {
             sessionStorage.setItem(_key, _val);
-      }
-      catch (exception) {
-            elog(exception);
-      }
+      } catch (exception) { elog(exception); }
 }
 function GetSession(_key) {
       try {
             return sessionStorage.getItem(_key);
-      }
-      catch (exception) {
-            elog(exception);
-      }
+      } catch (exception) { elog(exception); }
 }
 function RemoveSession(_key) {
       try {
             sessionStorage.removeItem(_key);
-      }
-      catch (exception) {
-            elog(exception);
-      }
-}
-function goback() {
-      parent.history.back();
+      } catch (exception) { elog(exception); }
 }

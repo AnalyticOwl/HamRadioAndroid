@@ -4,28 +4,21 @@ $(document).on('pageshow', function (event, ui) {
     if (currentPage == 'main') {
         log(currentPage);
         $('#panelHomeBtn').addClass('pannelcurrentpage');  //high light panel home button      
-    }
-    else if (currentPage == 'setting') {
+    } else if (currentPage == 'setting') {
         log(currentPage);
-        $('#panelSettingsBtn').addClass('pannelcurrentpage');   //high light panel settings button
-    }
-    else if (currentPage == 'about_app') {
+        $('#panelSettingsBtn').addClass('pannelcurrentpage');   //high light panel settings button   
+    } else if (currentPage == 'about_app') {
         log(currentPage);
         $('#panelAboutBtn').addClass('pannelcurrentpage');   //high light panel about button
     }
 });
 $(document).ready(function () {
     var hamsterdb;
+    var startup;
     InitWavesurfer();
     $('#containerFolders').hide();
     $('#containerPlaylist').show();
     $('#containerProfile').hide();
-    $(document).bind("mobileinit", function () {
-        $.mobile.ajaxEnabled = false;
-    });
-    jQuery(function () {
-        $("#panelLink").enhanceWithin().panel();
-    });
     $(document).on('click', '#nav_playlist', function () {
         $('#all_play').show();
         $('#add_playlist_hide').hide();
@@ -46,13 +39,10 @@ $(document).ready(function () {
             $("#maindir_name").html($(this).data("dirname"));
             $('#containerFolders').hide();
             $('#containerProfile').hide();
-            $('#containerPlaylist').show();           
+            $('#containerPlaylist').show();
             $("#main").removeClass("main-class");
             $('#profile_icon').show();
-
-        } catch (error) {
-            log(error);
-        }
+        } catch (error) { log(error); }
     });
     $(document).on('click', "#back_main", function () {
         $('#containerFolders').hide();
@@ -81,27 +71,26 @@ $(document).ready(function () {
             } else {
                 Checkbox_Refresh();
             }
-        } catch (error) {
-            log(error);
-        }
+        } catch (error) { log(error); }
     });
     $(document).on('click', '#syncData', function () {
         try {
             $.Deferred().resolve(sending_to_server())
-            .promise().done(function(){ 
-            $.when(syncLocalDBdata()).then(function () {
-                gotoPage("main");
-                getAllPlaylist();
-                $('#containerFolders').hide();
-                $('#containerProfile').hide();
-                $('#containerPlaylist').show();
-                $("#main").removeClass("main-class");
-                $('#profile_icon').show();
-                $('#all_play').show();
-                $('#add_playlist_hide').hide();
-            });
-        });
-        } catch (error) {log(error);}
+                .promise().done(function () {
+                    $.Deferred().resolve(syncLocalDBdata())
+                        .promise().done(function () {
+                            gotoPage("main");
+                            getAllPlaylist();
+                            $('#containerFolders').hide();
+                            $('#containerProfile').hide();
+                            $('#containerPlaylist').show();
+                            $("#main").removeClass("main-class");
+                            $('#profile_icon').show();
+                            $('#all_play').show();
+                            $('#add_playlist_hide').hide();
+                        });
+                });
+        } catch (error) { log(error); }
     });
     $(document).on('click', '#save_Profile', function () {
         updateSongwithProfile();
@@ -127,7 +116,10 @@ $(document).ready(function () {
                     $('#containerProfile').show();
                     $("#main").addClass("main-class");
                     $('#profile_icon').hide();
-                    $('#save_Profile').show();
+                    $('#save_Profile').show();                    
+                    if($('#ListProfiles li').length == 0){
+                        GetAllEqualizerProfiles();
+                    }
                 } else {
                     msg("This feature is available for registered users. Please Sign In");
                     $("#panelLink").panel("open");
@@ -135,9 +127,7 @@ $(document).ready(function () {
             } else {
                 msg("No internet connection");
             }
-        } catch (error) {
-            log(error);
-        }
+        } catch (error) { log(error); }
     });
     $(document).on('click', ".profileIMG", function () {
         $("#equalizer_profile").click();
@@ -170,15 +160,12 @@ $(document).ready(function () {
                 $('#userpalylist').selectmenu("refresh");
             } else {
                 SavePlayList(PL_name);
-            }
-            // $("#positionWindow").popup("close");
+            }           
             $("#playlist_name").val("");
             $("#userpalylist").empty();
             $("#play-list").empty();
             getAllPlaylist();
-        } catch (error) {
-            log(error);
-        }
+        } catch (error) { log(error); }
     });
     $(document).on('click', "#back_to_Folders", function () {
         try {
@@ -193,10 +180,7 @@ $(document).ready(function () {
             } else {
                 scanThisFolder(dirURL_back);
             }
-
-        } catch (error) {
-            log(error);
-        }
+        } catch (error) { log(error); }
     });
     $(document).on('click', '#shuffle', function () {
         if (GetLocal("playbar_Status") == "on") {
@@ -231,55 +215,57 @@ $(document).ready(function () {
             if (GetLocal("playbar_Status") == "on") {
                 var currSong = GetLocal("song_ID");
                 var shuffle = GetLocal("shuffle");
-                var Id_text, Id_num, len;
+                var Id_text, Id_num, len, start_val, end_val;;
                 if (~currSong.indexOf("FLsong_id")) {
                     Id_text = "FLsong_name";
                     Id_num = parseInt(currSong.replace("FLsong_id", "")) - 1;
                     len = parseInt(GetLocal("currDirSonglen"));
+                    start_val = parseInt($('#song_list > li').first().attr("id").replace("FLsong_id", ""));
+                    end_val = parseInt($('#song_list > li').last().attr("id").replace("FLsong_id", ""));
                 } else if (~currSong.indexOf("PLsong_id")) {
                     Id_text = "PLsong_name";
                     Id_num = parseInt(currSong.replace("PLsong_id", "")) - 1;
                     len = parseInt(GetLocal("currPLsonglen"));
+                    start_val = parseInt($('#currpalylist > li').first().attr("id").replace("PLsong_id", ""));
+                    end_val = parseInt($('#currpalylist > li').last().attr("id").replace("PLsong_id", ""));
                 }
                 if (shuffle == "on") {
-                    var randomNum = Math.floor(Math.random() * Math.floor(len));
+                    var randomNum = Math.floor(Math.random() * (end_val - start_val + 1) + start_val);
                     $("#" + Id_text + randomNum).click();
                 } else if (shuffle == "off") {
                     // if (Id_num < 1) { Id_num=1; }
                     $("#" + Id_text + Id_num).click();
                 }
             }
-        }
-        catch (exception) {
-            elog(exception);
-        }
+        } catch (exception) { elog(exception); }
     });
     $(document).on('click', '#playnext', function () {
         try {
             if (GetLocal("playbar_Status") == "on") {
                 var currSong = GetLocal("song_ID");
                 var shuffle = GetLocal("shuffle");
-                var Id_text, Id_num, len;
+                var Id_text, Id_num, len, start_val, end_val;
                 if (~currSong.indexOf("FLsong_id")) {
                     Id_text = "FLsong_name";
                     Id_num = parseInt(currSong.replace("FLsong_id", "")) + 1;
                     len = parseInt(GetLocal("currDirSonglen"));
+                    start_val = parseInt($('#song_list > li').first().attr("id").replace("FLsong_id", ""));
+                    end_val = parseInt($('#song_list > li').last().attr("id").replace("FLsong_id", ""));
                 } else if (~currSong.indexOf("PLsong_id")) {
                     Id_text = "PLsong_name";
                     Id_num = parseInt(currSong.replace("PLsong_id", "")) + 1;
                     len = parseInt(GetLocal("currPLsonglen"));
+                    start_val = parseInt($('#currpalylist > li').first().attr("id").replace("PLsong_id", ""));
+                    end_val = parseInt($('#currpalylist > li').last().attr("id").replace("PLsong_id", ""));
                 }
                 if (shuffle == "on") {
-                    var randomNum = Math.floor(Math.random() * Math.floor(len));
+                    var randomNum = Math.floor(Math.random() * (end_val - start_val + 1) + start_val); //Math.floor(Math.random() * Math.floor(len));
                     $("#" + Id_text + randomNum).click();
                 } else if (shuffle == "off") {
                     $("#" + Id_text + Id_num).click();
                 }
             }
-        }
-        catch (exception) {
-            elog(exception);
-        }
+        } catch (exception) { elog(exception); }
     });
     $(document).on('click', '#play', function () {
         if (GetLocal("playbar_Status") == "on") {
@@ -306,7 +292,7 @@ function onDeviceReady() {
     }
     if (parseInt(device.version) < 6) {
         log("Wrong Android version", "This example is specifically designed to illustrate runtime permissions on Android 6+, but on this version of Android (" + device.version + "), all permissions will be allocated at installation time based on the manifest.");
-        startUpApp()
+        startUpApp();
     }
     CheckCreateEvent();
     CreateSqlliteDB();
@@ -324,9 +310,8 @@ function onDeviceReady() {
                     }
                     break;
                 case "OFFHOOK":
-                   log("Phone is off-hook");
+                    log("Phone is off-hook");
                     break;
-
                 case "IDLE":
                     log("Phone is idle");
                     if (songisPause) {
@@ -337,7 +322,6 @@ function onDeviceReady() {
             }
         });
     }// on Call Pause and Play
-
 }
 function startUpApp() {
     SaveLocal("shuffle", "off");
@@ -346,7 +330,8 @@ function startUpApp() {
     $('#shuffle_off').show();
     $('#repeat_on').hide();
     $('#repeat_off').show();
-    
+    //SaveLocal("startup", true);
+    window.startup = true;
     mainDirectoryFolder();
     var currOpened_dir = GetLocal("CurrPath");
     if (currOpened_dir) {
@@ -354,11 +339,16 @@ function startUpApp() {
         scanThisFolder(currOpened_dir);
     } else {
         scanThisFolder(cordova.file.externalRootDirectory);
-    }   
+    }
     if (GetLocal("PL_dir") == "open") {
         var cpl_name = GetLocal("currPLName");
         var cpl_id = GetLocal("currPlayPL_id");
         songsfromPL(cpl_id, cpl_name);
+        var songURL = GetLocal("SongURL");
+        if (songURL) {
+            PlaySong(songURL, GetLocal("song_ID"),
+                GetLocal("playlist_ID"), GetLocal("ID_num"));
+        }
     } else {
         getAllPlaylist();
     }
@@ -366,11 +356,13 @@ function startUpApp() {
     if (GetLocal("User_status") == "success") {
         $("#signoutId").show();
         $("#signinId").hide();
-    if (checkConnection()) {  
-        GetAllEqualizerProfiles();      
-        sending_to_server();
-        } 
-    } else{
+        $("#email_address").html(GetLocal("User_Email"));
+        $("#Username").html(GetLocal("Username"));
+        if (checkConnection()) {
+            GetAllEqualizerProfiles();
+            sending_to_server();
+        }
+    } else {
         $("#signoutId").hide();
         $("#signinId").show();
     }
@@ -436,38 +428,32 @@ function mainDirectoryFolder() {
                             $("#Folder_List").append(dirLi);
                             $("#Folder_List").listview('refresh');
                         }
-
                     }
                 }
-
-            },
-                function (error) {
-                    elog("readEntries error: " + error.code);
-                }
-            );
-        } catch (error) {
-            elog("readEntries error: " + error.code);
-        }
+            }, function (error) {
+                elog("readEntries error: " + error.code);
+            });
+        } catch (error) { elog("readEntries error: " + error.code); }
     };
     var addError = function (error) {
         elog("getDirectory error: " + error.code);
     };
     window.resolveLocalFileSystemURL(dirURL, addFileEntry, addError);
 }
-function artistTag(UrlArray) {   
-    var counter=0;
+function artistTag(UrlArray) {
+    var counter = 0;
     $.each(UrlArray, function (n, url) {
-        ID3.loadTags(url, function () {           
+        ID3.loadTags(url, function () {
             counter++;
-            var artist=ID3.getTag(url, "artist");
-            log("artist"+counter+": "+artist);          
-                $("#chksong" + counter).attr("data-artist", artist);
-                $("#artist" + counter).text(artist);
+            var artist = ID3.getTag(url, "artist");
+            log("artist" + counter + ": " + artist);
+            $("#chksong" + counter).attr("data-artist", artist);
+            $("#artist" + counter).text(artist);
         });
     });
 }
 function scanThisFolder(dirURL) {
-       $("#nav_songs").click();
+    $("#nav_songs").click();
     $("#song_list").listview();
     $("#song_list").empty();
     var dirLi = "";
@@ -528,18 +514,14 @@ function scanThisFolder(dirURL) {
                             log("SongArray" + songArray.length);
                             log("Song counter" + song_counter);
                             log(songArray);
-                            artistTag(songArray); 
+                            artistTag(songArray);
                         }, 1000);
                     }
                 }
-            },
-                function (error) {
-                    elog("readEntries error: " + error.code);
-                }
-            );
-        } catch (error) {
-            elog("readEntries error: " + error.code);
-        }
+            }, function (error) {
+                elog("readEntries error: " + error.code);
+            });
+        } catch (error) { elog("readEntries error: " + error.code); }
     };
     var addError = function (error) {
         elog("getDirectory error: " + error.code);
@@ -547,21 +529,23 @@ function scanThisFolder(dirURL) {
     window.resolveLocalFileSystemURL(dirURL, addFileEntry, addError);
 }
 function PlaySong(current_song, song_ID, playlistID, Id) {
-    var profileID="";
+    $(".playing").removeClass("playing");
+    var profileID = "";
     if (song_ID.indexOf("FLsong_id")) {
         profileID = $("#PLsong_name" + Id).data("profileid");
         SaveLocal("curr_profile_ID", profileID);
-    }else{
-        profileID="0"
+    } else {
+        profileID = "0"
         SaveLocal("curr_profile_ID", "0");
     }
+    $("#" + song_ID.replace("id", "name")).addClass("playing");
+    SaveLocal("ID_num", Id);
     SaveLocal("song_ID", song_ID);
     SaveLocal("playlist_ID", playlistID);
-    // SaveLocal("curr_profile_ID", profileID);
     SaveLocal("SongURL", current_song);
     log("current_song=", current_song);
     $('#equalizer').empty();
-    var artistString = "unknown";
+    var artistString = "";
     var song_title = "";
     try {
         ID3.loadTags(current_song, function () {
@@ -584,6 +568,10 @@ function PlaySong(current_song, song_ID, playlistID, Id) {
     try {
         var songload = true;
         window.wavesurfer.on('play', function () {
+            if (window.startup) {
+                window.startup = false;
+                window.wavesurfer.playPause();
+            }
             if (songload) {
                 songload = false;
                 if (profileID) {
@@ -604,29 +592,14 @@ function PlaySong(current_song, song_ID, playlistID, Id) {
     // $("#time_current").html("");
     // $("#time_total").html("");    
 }
-function tags_def(current_song) {
-    var def = $.Deferred();
-    tags_obj = new Object();
-    ID3.loadTags(current_song, function () {
-        try {
-            var tags = ID3.getAllTags(current_song);
-            tags_obj.title = tags.title.replace(/\s+/g, '_');
-            tags_obj.artist = tags.artist.replace(/\s+/g, '_');
-            def.resolve(tags_obj);
-        } catch (error) {
-            elog(error);
-        }
-    });
-    return def.promise();
-}
 function updateSongwithProfile() {
     var song_ID = parseInt(GetLocal("song_ID").replace("PLsong_id", ""));
     var playlist_id = GetLocal("playlist_ID");
     var profile_id = parseInt(GetLocal("selected_profileId"));
     var name = GetLocal("songName");
     var songURL = GetLocal("SongURL");
-    updateSongData(song_ID, name, "artist", "imgPath", songURL, "album", playlist_id, profile_id);
-
+    var artistN = $("#PLartist" + song_ID).data("artist");
+    updateSongData(song_ID, name, artistN, "imgPath", songURL, "album", playlist_id, profile_id);
     $("#PLsong_name" + song_ID).data("profileid", profile_id);
     msg("Profile Saved against this song.");
 }
@@ -634,8 +607,7 @@ function SelectSong(indexer) {
     var id = "#chksong" + indexer;
     if ($(id).prop('checked') == true) {
         $(id).addClass("selected");
-    }
-    else {
+    } else {
         $(id).removeClass("selected");
     }
 }
@@ -653,7 +625,6 @@ function SavePlayList(PlaylistName) {
     var selected_Songs = $.makeArray(obj);
     var len = selected_Songs.length;
     var curr_PL_id;
-
     if (len == 0) {
         msg("Please select the Songs");
     } else {
@@ -665,28 +636,24 @@ function SavePlayList(PlaylistName) {
             var song_name = "";
             var artist_name = "Artist";
             var album_name = "album";
-
             for (i = 0; i < len; i++) {
                 id_Name = '#' + selected_Songs[i].id;
                 data_song_URL = $(id_Name).attr('data-songurl');
                 song_name = $(id_Name).attr('data-songname');
-                artist_name = $(id_Name).attr('data-artist');               
+                artist_name = $(id_Name).attr('data-artist');
                 insertSongData(song_name, artist_name, "ImgPath", data_song_URL, album_name, curr_PL_id, 0);
             }
         });
         Checkbox_Refresh();
         $('#allcheckbox').prop("checked", false);
         log("Play List Save Done");
-        //getAllPlaylist();
     }
 }
 function getAllPlaylist() {
     log("Get All PalyList Start");
     $('#back_to_playlist').hide();
-
     $("#currpalylist").listview();
     $("#userpalylist").listview();
-
     $("#currpalylist").empty();
     $("#userpalylist").empty();
     var playListDDL = '<option value="select" data-placeholder="true">Select</option>';
@@ -718,7 +685,6 @@ function songsfromPL(playlist_id, playlist_name) {
     SaveLocal("currPLName", playlist_name);
     SaveLocal("currPlayPL_id", playlist_id);
     SaveLocal("PL_dir", "open");
-    //songs Keys (id, name, artist, image, songUrl,album_id, playlist_id, profile_id")   
     GetsongsData(playlist_id).then(function (response) {
         var song_len = response.length, i;
         SaveLocal("currPLsonglen", song_len);
@@ -730,9 +696,9 @@ function songsfromPL(playlist_id, playlist_name) {
             var songUrl = response.item(i).songUrl;
             var profileID = response.item(i).profile_id;
             var playlistID = response.item(i).playlist_id;
-            SongList += '<li id="PLsong_id' + songID + ' " class="ui-grid-b audio_list" >';
+            SongList += '<li id="PLsong_id' + songID + '" class="ui-grid-b audio_list" >';
             SongList += '<div class="ui-block-b song_li_name"><p class="audio_list_name"  data-profileid="' + profileID + '" id="PLsong_name' + songID + '"  onclick="PlaySong(&#34;' + songUrl + '&#34;,&#34;PLsong_id' + songID + '&#34;,&#34;' + playlistID + '&#34;,&#34;' + songID + '&#34;);"><strong>' + songName + '</strong></p>';
-            SongList += '<p class="artist_PL">' + artist_Name + '</p></div>';
+            SongList += '<p id="PLartist' + songID + '" data-artist="' + artist_Name + '" class="artist_PL">' + artist_Name + '</p></div>';
             SongList += '<div class="ui-block-c song_li_headphone"><img  class="profileIMG" id="PLprofileImg' + songID + '"  src="image/headphone-small.png"></div>';
             SongList += '</li>';
         }
@@ -740,18 +706,15 @@ function songsfromPL(playlist_id, playlist_name) {
         $("#currpalylist").listview('refresh');
         log("Song List Page End ");
     });
-
     $('#all_play').show();
     $('#add_playlist_hide').hide();
     $('#back_to_playlist').show();
-
 }
 function upDateplayList(playlist_id) {
     var obj = $(".chksong.selected");
     var selected_Songs = $.makeArray(obj);
     var len = selected_Songs.length;
     var curr_PL_id = playlist_id;
-
     if (len == 0) {
         msg("Please select the Songs");
     } else {
@@ -760,12 +723,11 @@ function upDateplayList(playlist_id) {
         var song_name = "";
         var artist_name = "";
         var album_name = "";
-
         for (i = 0; i < len; i++) {
             id_Name = '#' + selected_Songs[i].id;
             data_song_URL = $(id_Name).attr('data-songurl');
             song_name = $(id_Name).attr('data-songname');
-            artist_name = $(id_Name).attr('data-artist');           
+            artist_name = $(id_Name).attr('data-artist');
             insertSongData(song_name, artist_name, "ImgPath", data_song_URL, album_name, curr_PL_id, 0);
             status_Set(curr_PL_id, 1);
         }
@@ -786,7 +748,6 @@ function checkConnection() {
     states[Connection.CELL] = 'Cell generic connection';
     states[Connection.NONE] = 'No network connection';
     log('Connection type: ' + states[networkState]);
-
     if (states[networkState] == 'No network connection') {
         return false;
     } else {
@@ -808,9 +769,7 @@ function GetAllEqualizerProfiles() {
             $("#ListProfiles").listview('refresh');
         });
         log("GetAllEqualizerProfiles complete");
-    } catch (exception) {
-        elog(exception);
-    }
+    } catch (exception) { elog(exception); }
 }
 function equalizer_SetValue(_Profile_id) {
     $(".profileSelected").removeClass("profileSelected");
@@ -818,9 +777,7 @@ function equalizer_SetValue(_Profile_id) {
     try {
         SaveLocal("selected_profileId", _Profile_id);
         var profileData = GetAjax("http://testingserver.net/audio/api/getprofile/" + _Profile_id);
-        // var profile_id_is = profileData.id;
         var key_valuesPair = "";
-        // get response string convert to json
         profileData.done(function (resultData) {
             var profileBand = resultData.profile[0].band;
             profileBand = profileBand.split(',');
@@ -830,15 +787,11 @@ function equalizer_SetValue(_Profile_id) {
             key_valuesPair = '{' + key_valuesPair + '}';
             key_valuesPair = key_valuesPair.replace(',}', '}');
             var finalJson = JSON.parse(key_valuesPair);
-            // set received finalized json to inputs
             SetEqJson(finalJson);
         }).fail(function (resultdata) {
             jlog(resultdata);
         });
-    }
-    catch (exception) {
-        elog(exception);
-    }
+    } catch (exception) { elog(exception); }
 };
 var SetEqJson = function (_eqBandJson) {
     try {
@@ -863,9 +816,7 @@ var SetEqJson = function (_eqBandJson) {
         $('#eqInput17634').val(_eqBandJson.eqJson17634);
         $('#eqInput20000').val(_eqBandJson.eqJson20000);
         focusFunction();
-    } catch (exception) {
-        elog(exception);
-    }
+    } catch (exception) { elog(exception); }
 };
 function focusFunction() {
     $('#eqInput32').focus();
@@ -914,7 +865,5 @@ function Eq_Reset() {
         $('#eqInput17634').val(0);
         $('#eqInput20000').val(0);
         focusFunction();
-    } catch (exception) {
-        elog(exception);
-    }
+    } catch (exception) { elog(exception); }
 }

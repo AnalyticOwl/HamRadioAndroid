@@ -118,7 +118,7 @@ function deleteTableRows(tableName) {
 }
 function syncLocalDBdata() {
     if (checkConnection()) {
-        if (GetSession("User_status") == "success") {
+        if (GetLocal("User_status") == "success") {          
             log("Synch and Update of Playlists Data Start");          
             var userId = GetLocal("User_Id");           
             deleteTableRows("playlist");
@@ -173,7 +173,6 @@ function Get_Active_playlist() {
     }, def.fail);
     return def.promise();
 }
-
 function sending_to_server() {
     var user_Id = GetLocal("User_Id");
     var PL_len;
@@ -195,7 +194,7 @@ function sending_to_server() {
                 Songs += '"songs": [';
                 for (var inrIndex = 0; inrIndex < song_len; inrIndex++) {
                     song_name = inner_response.item(inrIndex).name;
-                    song_artist = "unknown";
+                    song_artist = inner_response.item(inrIndex).artist;
                     song_image = inner_response.item(inrIndex).image;
                     song_album = inner_response.item(inrIndex).album_id;
                     song_url = inner_response.item(inrIndex).songUrl;
@@ -227,10 +226,7 @@ function sendAjaxCall(Songs, curr_PL_id) {
         }).fail(function (exception) {
             log("Error: ", exception);
         });
-    }
-    catch (error) {
-        elog(error);
-    }
+    } catch (error) {elog(error);} 
 }
 function status_Set(current_playList_id, status_val) {
     hamsterdb.transaction(function (transaction) {

@@ -226,10 +226,7 @@ function sendAjaxCall(Songs, curr_PL_id) {
         }).fail(function (exception) {
             log("Error: ", exception);
         });
-    }
-    catch (error) {
-        elog(error);
-    }
+    } catch (error) {elog(error);} 
 }
 function status_Set(current_playList_id, status_val) {
     hamsterdb.transaction(function (transaction) {

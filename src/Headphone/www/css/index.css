@@ -24,12 +24,9 @@ body {
     padding:0px;
     width:100%;
 }
-/*Aftab */
 * {
-    box-shadow: none!important;
-    /* font-weight: 300; */
+    box-shadow: none!important;   
 }
-
 @font-face {
     font-family: abc;
     src: url("../fonts/OratorStd.otf");
@@ -44,64 +41,140 @@ button,
     text-shadow: unset !important;
     font-weight: normal;
 }
-/* Aftab tag end  */
-/* 3-17 aftab changes */
-
 .background-login-image {
     background-image: url('../image/bg-splash-page.jpg');
 }
-
 .png_icons_mail {
-
     font-size: 20px!important;
     color: black;
     margin-top: 16px;
     width: 34px;
 }
-
 .fa-user:before {
     margin-left: 1px;
 }
-
 .fa-unlock-alt:before {
     margin-left: 1px;
 }
-
 .eqStyle_low {
     margin: 0% -13% 0% 8%;
+    margin-bottom:30px;
+    margin-top: 5px;
 }
-
 .eqStyle_medium {
     margin: 0% -32% 0% 13%;
+    margin-bottom:30px;
+    margin-top: 5px;
 }
-
 .eqStyle_heigh {
-    margin: 2% -18% 0% 10%;
+    margin: 2% -9% 0% 10%;
+    margin-bottom:30px;
+    margin-top: 5px;
 }
-
+.equalizer-wrap{
+    position: relative;
+    color: rgb(20, 19, 19);
+}
+.equalizer-wrap, .bass-freq, .mid-freq, .treble-freq{
+    width: 100%; 
+}
+.bass-freq {
+position: absolute;
+top:0px;
+margin-top:82px;
+left:0px;
+margin-left:52px;
+height: 25px;  
+}
+.mid-freq{   
+    position: absolute;
+    top:0px;
+    margin-top:200px;
+    left:0px;
+    margin-left:65px;
+    height: 25px;  
+}
+.treble-freq{   
+    position: absolute;
+    top:0px;
+    margin-top:316px;
+    left:0px;
+    margin-left:65px;
+    height: 25px;  
+}
+.right-bass-dbs{
+position: absolute;
+top:0px;
+margin-top:0px;
+right:0px;
+margin-right:35px; 
+width:25px;
+text-align: center;
+}
+.right-mid-dbs{   
+    position: absolute;
+    top:0px;
+    margin-top:118px;
+    right:0px;
+    margin-right:35px; 
+    width:25px;
+    text-align: center;
+}
+.right-treble-dbs{  
+    position: absolute;
+    top:0px;
+    margin-top:236px;
+    right:0px;
+    margin-right:35px; 
+    width:25px;
+    text-align: center;
+}
+.right-bass-dbs table tr td{
+height: 12px;
+line-height: 12px;
+}
+.right-mid-dbs table tr td{
+    height: 12px;
+    line-height: 12px;
+}
+.right-treble-dbs table tr td{
+    height: 12px;
+    line-height: 12px;
+    }
 .eqStyle_low_lable {
     position: relative;
     left: -4%;
     bottom: 26px;
 }
-
 .eqStyle_medium_lable {
     position: relative;
     left: -6%;
     bottom: 30px;
 }
-
 .eqStyle_high_lable {
     position: relative;
     left: -5%;
     bottom: 28px;
 }
-
 .containerEqualizer {
     position: relative;   
     width: 100%;
 }
-
+@media screen and (min-width: 701px) {
+    .bass-freq{     margin-left:64px; }
+    .mid-freq{      margin-left:95px; }
+    .treble-freq{   margin-left:95px; }  
+}
+@media screen and (min-width: 551px) and (max-width: 700px) {
+    .bass-freq{     margin-left:60px; }
+    .mid-freq{      margin-left:85px; }
+    .treble-freq{   margin-left:85px; }    
+}
+@media screen and (min-width: 401px) and (max-width: 550px) {
+    .bass-freq{     margin-left:57px; }
+    .mid-freq{      margin-left:78px; }
+    .treble-freq{   margin-left:78px; }   
+}
 .mp3_player {
     width: 500px;
     height: 60px;
@@ -109,28 +182,23 @@ button,
     padding: 5px;
     margin: 50px auto;
 }
-
 .audio_box {
     width: 500px;
     background: #000;
     float: left;
 }
-
 .canvas {
     width: 500px;
     height: 30px;
     background: #002D3C;
     float: left;
 }
-
 .textEq {
     width: 20px;
 }
-
 #txtSongUrl {
     width: 100%;
 }
-
 .logo_wrap {
     width: 100%;
     padding: 10px 0 0 3%;
@@ -139,36 +207,28 @@ button,
 .logo_img img {
     width: 60%;
 }
-
 .nav_btns_lst li a {
     font-size: 14px !important;
     font-weight: 100;
 }
-
 .shuffle_wrap {
     background-color: #555555 !important;
 }
-
 .icon_style_setting {
     padding-left: 22% !important;
 }
-
 .shuffle_icons {
     width: 100% !important;
 }
-
 .search_btn {
     margin-top: 37px !important;
 }
-
 .search_playlist_button {
     padding-right: 22px !important;
 }
-
 .left_icons {
     max-width: 43%;
 }
-
 .popout_style_show {
     text-align: center;
     height: 330px !important;
@@ -177,60 +237,51 @@ button,
     border-radius: 0;
     border-top: 1px solid whitesmoke;
 }
-
 .playlist_border_style {
     border-bottom: 1px solid #ffbf00;
     margin-top: -18px;
     height: 33px;
 }
-
+.playing{
+    color: #ffbf00 !important;
+}
 .button_position {
     margin-left: 17px !important;
 }
-
 .ui-icon-player_back:after {
     background-image: url("../image/unnamed.png");
     background-size: 2px;
     margin-left: 17px !important;
 }
-
 .playlist_border_style div {
     background-color: transparent !important;
 }
-
 .option_playlist_style {
     border-bottom: 1px solid #F1C40F;
     height: 44px;
 }
-
 .position_cancel_popup {
     position: relative;
 }
-
 .cancel_popout_color {
     color: #F1C40F !important;
 }
-
 .left_icons li {
     margin-left: -2%;
 }
-
 .left_icons li img {
     width: 21px;
 }
-
 .search_btn a {
     float: right;
     max-width: 15%;
 }
-
 .song_list {
     display: block;
     border-bottom: 1px solid #D9B740 !important;
     padding-top: 8px!important;
     padding-bottom: 8px!important;
 }
-
 .song_list img {
     width: 30px;
     display: inline-block;
@@ -238,18 +289,15 @@ button,
     margin-right: 3%;
     margin-top: -27px;
 }
-
 #result-table.td {
     width: 100%;
     text-align: center;
 }
-
 .band-container {
     text-transform: uppercase;
     font-style: sans-serif;
     font-size: 20px;
 }
-
 .btn-primary {
     border-radius: 12px;
     text-transform: uppercase;
@@ -258,11 +306,9 @@ button,
     margin-top: 20px;
     background-color: #ffb344;
 }
-
 .hmsong-checkbox {
     margin: 1.5em -5.5em;
 }
-
 .label_song {
     margin: -9px -40px .4em!important;
     white-space: nowrap;
@@ -271,7 +317,6 @@ button,
     overflow: hidden;
     color: #F1C40F;
 }
-
 .chkSong {
     left: -5.534em;
     margin: 6px 0 0 0;
@@ -279,82 +324,62 @@ button,
     width: 19px!important;
     margin-top: -1px !important;
 }
-
 .block_display {
     display: flex;
 }
-
 .ui_setting {
     display: flex;
 }
-
 .Player_save {
     width: 46px;
     height: 36px;
     margin-left: 50px;
     margin-right: 50px;
 }
-
 .Player_Equalizer {
     width: 46px;
     height: 36px;
 }
-
 .Panel_btn {
     position: relative;
     margin-bottom: 10px;
 }
-
 .nav-logo {
     width: 53%;
     margin: 0px auto;
     position: relative;
     display: block;
 }
-
-
-/* .navbar_Player {
-    width: 100%;
-    height: 47px;
-    border-bottom: 1px solid #000;
-} */
-
 .leftIcon {
     float: left;
     width: 13%;
     margin: 0;
     height: 47px;
 }
-
 .titlePlay {
     float: left;
     width: 76.5%;
     border-left: 1px solid #000;
     border-right: 1px solid #000;
 }
-
 .titlePlay h1 {
     margin: 0;
     margin-left: 25px;
     margin-top: 5px;
 }
-
 .rightIcon {
     float: left;
     width: 10%;
 }
-
 .backImg {
     width: 75%;
     margin-top: -7%;
     margin-left: 8%;
 }
-
 .menuImg {
     width: 70%;
     margin-left: 22%;
 }
-
 .menuImgmain {
     position: relative;
     width: 7%;
@@ -367,45 +392,37 @@ button,
     width: 100%;
     margin-top: 20px;
 }
-
 .tetcnt {
     text-align: center;
 }
-
 .pannel-list {
     margin-left: 7%;
     text-align: left;
     padding-bottom: 2px;
     text-shadow: none;
-
 }
 .panel-content a {
     margin: 0;
     border-bottom: 1px solid #4e4e4e !important;
     border-radius: 0 !important;
 }
-
 .ui-icon-editicon:after {
     background-image: url(../image/edit.svg);
     background-size: 24px 24px;
     border-radius: 0;
     right: 2em;
 }
-
 .ui-icon-lockscreen:after {
     background-image: url(../image/lock-screen-icon.png);
     background-size: 20px 20px;
     border-radius: 0!important;
 }
-
 .my_pannel {
     background-color: #555555;
 }
-
 .hellowhi {
     background: #D9B740 !important;
 }
-
 .setting_content {
     padding: 0;
 }
@@ -416,202 +433,158 @@ button,
     color: #b8b8c7;
     padding-left: 22px;
 }
-
 .setting_content hr {
     border-color: #D9DADC;
     margin: 0;
 }
-
 .setting_content span {
     padding: 0;
 }
-
 .setting_content ul {
     margin: 0!important;
 }
-
 .about_content {
     padding: 0;
 }
 .about_content li {
     border-bottom: 1px solid #4e4e4e;
 }
-
 .about_content p {
     color: #b8b8c7;
 }
-
 .about_content hr {
     border-color: #F1C40F;
     margin: 0;
 }
-
 .about_content ul {
     margin: 0!important;
 }
-
 .about_postion_a {
     float: left;
 }
-
 .about_postion_b {
     float: right;
     color: white !important;
 }
-
-
-/* aftab */
-
 .login-image-container {
     text-align: center!important;
     background: transparent !important;
     border-color: #fec009 !important;
 }
-
 .login-image-border {
     border-color: white;
     width: 51%;
 }
-
 .png_icons {
     font-size: 26px !important;
     color: black;
     margin-top: 13px;
     width: 34px;
 }
-
 .field-container {
     display: flex;
     border-bottom: 1px solid black;
     height: 47px;
 }
-
 .input_login {
     width: 100%;
     background-color: transparent !important;
     margin-top: 9px;
 }
-
 .forget_password {
     text-align: center;
     color: black !important;
     margin-bottom: -10px;
 }
-
 .forget_password h5 {
     margin-bottom: 0px;
 }
-
 .fotter_icons {
     justify-content: center;
     color: black;
     font-size: 35px !important;
     margin-right: 23px;
 }
-
 .ui-page-theme-b .ui-body-inherit {
     background-color: transparent;
     border: none;
     text-shadow: none!important;
     box-shadow: none !important;
 }
-
 .ui-page-theme-b {
     text-shadow: none!important;
 }
-
 .login-footer {
     text-align: center;
     background: transparent !important;
     border-color: #fec009 !important;
     margin-top: -5px;
 }
-
 .login-image {
     margin: auto !important;
     width: 69%;
 }
-
 #Login_Page {
     margin-left: 9%;
     margin-right: 9%;
 }
-
 .check_box_setting {
     margin-left: -10px;
 }
-
 .login_connect_with {
     display: flex;
 }
-
-
-
 #Reg_Page {
     margin-left: 9%;
     margin-right: 9%;
 }
-
 .remember_me {
     color: black !important;
     z-index: 0 !important;
 }
-
 #RememberMe {
     width: 29px !important;
 }
-
 .login_connect_with {
     color: black !important;
     font-size: 15px !important;
     text-transform: lowercase!important;
 }
-
 .button_login_size {
     height: 43px;
 }
-
 .menu_button_link {
 
     height: 70%;
     border-bottom: 0 !important;
     padding-left: 0;
 }
-
-/*ahwaer coded classes march 08*/
-
 div {
     outline: 0px solid red !important;
 }
-
 .navbar_img {
     width: 26px;
     height: 26px;
     margin-top: 2px;
 }
-
 .main_page_logo {
     margin: 8px 0 8px 8px !important;
     width: 250px;
 }
-
 .navbar_img_container {
     padding: 0;
     margin: 0;
     border: 0;
     background-color: transparent;
 }
-
 .nav_button_container {
     margin: 0;
     padding: 0;
 }
-
 .menu_button_img {
     height: 28px;
     margin-top: 14px;
 }
-
 .button_flip_flop div {
     float: right;
     display: block;
@@ -619,7 +592,6 @@ div {
     margin-bottom: -4px;
     border-radius: 48px!important;
 }
-
 .popup_styln {
     width: 300px!important;
     color: #F1C40F !important;
@@ -631,46 +603,37 @@ div {
     height: 257px;
     border-bottom: 1px solid blanchedalmond;
 }
-
 .popup_fotter {
     position: relative !important;
 }
-
 .input_popup_style div {
     background-color: transparent !important;
     border-bottom: 1px solid blanchedalmond !important;
     border-radius: 0px !important;
 }
-
 .navbar_styling {
     width: 70%;
     margin-left: 13%;
     margin-right: 15%;
 }
-
 .active_button_style.ui-btn-active {
     color: black !important;
     border-bottom: 2px solid black !important;
 }
-
 .settings_header {
     display: flex;
 }
-
 .settings_header p {
     font-size: x-large;
 }
-
 .settings_header a:active {
     border-bottom: 0 solid red!important;
 }
-
 .main_content {
     padding-top: 8px;
     padding-left: 0;
     padding-right: 0;
 }
-
 .main-nav-bar2 {
     background-color: #555;
     height: 36px;
@@ -678,31 +641,25 @@ div {
     padding-top: 4px;
     padding-bottom: 2px;
 }
-
 .ui-filterable {
     background-color: #555;
     margin-left: 22px;
     margin-right: 22px;
 }
-
 .ui-filterable input {
     padding-top: 10px;
 }
-
 .ui-flipswitch-active {
     color: #000!important;
     background-color: #F1C40F!important;
     border-bottom: 0!important;
 }
-
 .about_Us_header {
     display: flex;
 }
-
 .about_Us_header p {
     font-size: x-large;
 }
-
 .about_Us_header a:active {
     border-bottom: 0!important;
 }
@@ -713,12 +670,10 @@ div {
 .main-nav-bar a {
     padding: 12px 0;
 }
-
 #Reg_page {
     margin-left: 9%;
     margin-right: 14%;
 }
-
 .button_colour {
     background: #555555!important;
     margin-top: 38px;
@@ -728,22 +683,18 @@ div {
     outline: 1px solid black;
     padding-top: 3px;
 }
-
 #Login_Page input::placeholder {
     color: black !important;
 }
-
 #Reg_Page input::placeholder {
     color: black !important;
 }
-
 .fotter_icons {
     justify-content: center;
     color: #555555;
     font-size: 35px !important;
     margin-right: 23px;
 }
-
 .footer_icon_container {
     display: flex;
     justify-content: center;
@@ -751,7 +702,6 @@ div {
     margin-right: 2%;
     margin-top: -6px;
 }
-
 .login_connect_with {
     display: flex;
     color: black !important;
@@ -760,16 +710,12 @@ div {
     font-weight: 100;
     text-shadow: none !important;
 }
-
-
-
 .footer_text {
     display: none;
     color: #555555;
     font-weight: 100;
     text-shadow: none;
 }
-
 .footer_text p {
     white-space: normal;
     font-size: 12px;
@@ -778,50 +724,40 @@ div {
     word-spacing: -2px;
     margin: 0;
 }
-
 .navbar_Player {
     height: 58px;
     width: 100%;
     border-bottom: 1px solid white;
 }
-
 .back_music_player {
     height: 35px;
     background-color: transparent;
 }
-
 .left_Icon {
     width: 51px !important;
     height: 58px;
 }
-
 .left_Icon img {
     height: 28px;
     width: 48%;
     padding: 13px;
     cursor: pointer;
 }
-
 #panelLink {
     position: fixed;
 }
-
 .image_text_music {
     display: flex;
     height: 51px;
 }
-
 .remember_me p {
     margin: 0;
     margin-top: 3px;
 }
-
-
 .music_header_image img {
     width: 34px;
     margin-top: 5px;
 }
-
 .music_header_text p {
     width: max-content;
     font-size: 18px;
@@ -830,142 +766,103 @@ div {
     margin-left: 9px;
     margin-top: 20px;
 }
-
-
-/* .music_header_text {
-    margin: auto;
-} */
-
 image_text_music {
     display: flex;
     height: 51px;
 }
-
 .track_repeat_button {
     width: 30px;
     margin-left: 7px;
 }
-
-
 .track_repeat_container {
     display: flex;
     width: 33.5%;
 }
-
 .repeat_on {
     margin-top: 9px;
 }
-
 .repeat_off {
     margin-top: 9px;
     display: none;
 }
-
 .track_play_container {
     display: flex;
     justify-content: space-between;
     width: 76% !important;
     align-items: center;
 }
-
 .middle_panel_setting {
     width: -webkit-fill-available;
 }
-
 .pause_image {
     display: none;
 }
-
 .side_shuffle_container {
     float: right;
     margin-right: 5px;
 }
-
 .side_shuffle_icon1 {
     width: 27px;
     margin-top: 0;
 }
-
-
 .main-ui-tab {
     padding-left: 0;
     padding-right: 0;
 }
-
 .pannel-icon:after {
     margin-top: -14px;
 }
-
-
 #slider-2 {
     display: none;
 }
-
 .slider_style div.ui-slider-track.ui-mini {
     height: 2px !important;
     top: 8px !important;
     width: 94% !important;
     border-width: 0px;
 }
-
 .slider_style a {
     border-radius: 14px;
     background-color: #fec009 !important;
     border-color: transparent !important;
 }
-
 .slider_style div.ui-slider-bg.ui-btn-active {
     border-bottom: 0px;
     background-color: #fec009;
 }
-
-
-
-/* * {
-    border: 1px solid red;
-} */
-
 .slider_low_volume {
     width: 15% !important;
 }
-
 .slider_main_volume {
     width: 70% !important;
 }
-
 .slider_high_volume {
     width: 15% !important;
 }
-
 .slider_style div.ui-slider {
     margin-top: -10px;
 }
-
 .low_volume_image {
     width: 19px;
     float: right;
     padding: 5px;
 }
-
 .high_volume_image {
     width: 22px;
     float: left;
     padding-top: 8px;
 }
-
 .pannelcurrentpage {
     border: 1px solid #F1C40F;
     border-radius: 0 !important;
     background-color: #F1C40F!important;
     color: #555555!important;
 }
-
 #waveform {
     width: 56%;
     margin-left: 16%;
     display: none;
 }
-
 #time_current {
     float: left;
     position: relative;
@@ -974,7 +871,6 @@ image_text_music {
     font-size: 12px;
     color: #FFBF00;
 }
-
 #time_total {
     float: right;
     position: relative;
@@ -983,20 +879,17 @@ image_text_music {
     margin-right: 6%;
     color: #FFBF00;
 }
-
 .refresh_image {
     height: 24px;
     width: 24px;
     margin-top: 4px;
 }
-
 .profile_image {
     width: 24px;
     position: relative;
     top: 8px;
     left: 6px;
 }
-
 .profile_heading {
     margin: 0 !important;
     margin-top: -31px !important;
@@ -1004,79 +897,64 @@ image_text_music {
 .setting_header {
     display: flex;
 }
-
 .about_header {
     display: flex;
 }
-
 .setting_header_text {
     font-size: x-large;
     margin-left: 14px;
 }
-
 .about_header_text {
     font-size: x-large;
     margin-left: 14px;
 }
-
 .setting_logoImg {
     width: 42px;
     height: 59px;
     margin-left: 12px;
     margin-top: 10px;
 }
-
 .about_logoImg {
     width: 42px;
     height: 59px;
     margin-left: 12px;
     margin-top: 10px;
 }
-
 .artist_name {
     margin-top: -4px !important;
     margin-bottom: 0 !important;
     margin-left: -40px !important;
     color: lightgray;
 }
-
 .headphone {
     margin-top: -35px !important;
 }
-
 ul {
     border-radius: 0!important;
 }
-
 .button_flip_flop a {
     background-color: white!important;
 }
-
 .or_contact_us {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-top: -5px;
 }
-
 .ui-flipswitch {
     background: lightgray;
     border: 0;
 }
-
 .ui-flipswitch-on {
     padding-top: 1px !important;
 }
-
 .ui-flipswitch-off {
     padding-top: 2px!important;
     color: black;
 }
-
 .header_aligment {
     width: 66% !important;
 }
-
 .ui-icon-usercustom:after {
     background-image: url(../image/user.svg);
     background-size: 22px 22px;
@@ -1084,7 +962,6 @@ ul {
     margin-top: -13px;
     margin-left: 7px;
 }
-
 .ui-icon-mailcustom:after {
     background-image: url(../image/envelop.svg);
     background-size: 22px 22px;
@@ -1092,7 +969,6 @@ ul {
     margin-top: -13px;
     margin-left: 7px;
 }
-
 .ui-icon-passwordcustom:after {
     background-image: url(../image/lock.svg);
     background-size: 22px 22px;
@@ -1100,7 +976,6 @@ ul {
     margin-top: -13px;
     margin-left: 7px;
 }
-
 .ui-icon-laptopcustom:after {
     background-image: url(../image/laptop.svg);
     background-size: 26px 26px;
@@ -1108,7 +983,6 @@ ul {
     margin-top: -13px;
     margin-left: 7px;
 }
-
 .editPlaylistPopup {
     color: #F1C40F !important;
     text-align: center;
@@ -1117,7 +991,6 @@ ul {
     border-top: 1px solid blanchedalmond;
     border-radius: 0px;
 }
-
 .deletePlaylistPopup {
     color: #F1C40F !important;
     text-align: center;
@@ -1126,15 +999,12 @@ ul {
     border-top: 1px solid blanchedalmond;
     border-radius: 0px;
 }
-
 .ui-icon-carat-r:after {
     display: none;
 }
-
 .playlists_List {
     border-bottom: 1px solid #F1C40F;
 }
-
 .artist_album_label {
     margin: -9px 12px .4em!important;
     white-space: nowrap;
@@ -1143,15 +1013,12 @@ ul {
     overflow: hidden;
     color: #F1C40F;
 }
-
 .album_artist_count {
     margin-top: -4px !important;
     margin-bottom: 0 !important;
     margin-left: 12px !important;
     color: lightgray;
 }
-
-
 .main_logo {
     width: 216px;
     height: 46px;
@@ -1163,12 +1030,9 @@ ul {
     height: 33px;
     margin-top: 5px;
 }
-
 .header {
     border-bottom: 0px solid !important;
-    background-color: #d9dadc !important;
-    /* display: flex;
-    align-items: center; */
+    background-color: #d9dadc !important;    
     height: 59px;
 }
 .headertext {
@@ -1179,7 +1043,6 @@ ul {
     margin-top: 0;
     margin-bottom: 0;
 }
-
 .song_cls{
     text-align: center;
     color: #000
@@ -1206,10 +1069,6 @@ ul {
     float: left;
     margin: 4px 6px 0px 3px;
 }
-/* .dirBack-block{
-   
-    margin-top: 10px; 
-} */
 .ham-dir-nav{
     background-color:#212121
 }
@@ -1230,13 +1089,8 @@ ul {
 .file_control span {
     font-weight: normal!important;
 }
-.play_playlist{
-    
+.play_playlist{    
     margin: 5px 5px 0px -8px;
-}
-.play_text{
-    /* float: left;
-    margin: 8px 2px 0px -3px; */
 }
 .play_text a {
     font-weight: normal !important;
@@ -1270,7 +1124,6 @@ ul {
     float: left;
     margin: 7px 6px 0px 3px;
 }
-/* aftab 26 Mar Start CSS*/
 profile_container{
     background-color: #F1C40F;
 }
@@ -1296,7 +1149,6 @@ profile_container{
     height: 157px;
     overflow: auto;
 }
-/* change this in css */
 .player_bar_buttons {
     height: 30px;
     margin-left: 9%;
@@ -1316,7 +1168,6 @@ profile_container{
     color: #d9dadc;
     background-color: #212121;
     font-weight: 400;
-
 }
 .profile_headphone{
     display:block ;
@@ -1338,8 +1189,7 @@ profile_container{
     margin-left: 10px;
 }
 .scroll_folder{
-    width: 100%;
-   
+    width: 100%;   
     overflow: scroll;
 }
 .Folder_List li{
@@ -1370,9 +1220,6 @@ profile_container{
 .main-class{
     background-color: #ffcc06;
 }
-/* aftab 26 Mar End CSS*/
-
-/* Ahwar 26 Mar Start */
 .palyerdiv {
     width: 100%;
     background-color: #d9dadc;   
@@ -1416,7 +1263,6 @@ profile_container{
 }
 .player_bar {
     padding-bottom: 18px;
-
     text-align: center;
     background-color: #d9dadc;
 }
@@ -1510,8 +1356,7 @@ profile_container{
     font-size: 15px;
     height: 16px;
     display: flex;
-    overflow: hidden;
-    
+    overflow: hidden;    
     text-align: center;
     align-items: flex-start;
     color: #24272e;
@@ -1543,7 +1388,6 @@ profile_container{
     top: 33px;
     position: relative;
 }
-
 .profile_trigger_2 img {
     margin: 6px;
     margin-bottom: 0;
@@ -1561,8 +1405,7 @@ profile_container{
     text-align: right;
 }
 .inbl{
-    display: inline-block;
-    /* float:left; */
+    display: inline-block;  
     text-decoration: none;
 }
 .inbr {
@@ -1647,7 +1490,6 @@ profile_container{
 .profileSelected {
     background-color: #b8b8c7 !important;
 }
-/* Ahwar 26 Mar End*/
 .error_text{
     color: red;
 }
