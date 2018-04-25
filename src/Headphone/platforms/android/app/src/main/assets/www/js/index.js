@@ -329,8 +329,7 @@ function startUpApp() {
     $('#shuffle_on').hide();
     $('#shuffle_off').show();
     $('#repeat_on').hide();
-    $('#repeat_off').show();
-    //SaveLocal("startup", true);
+    $('#repeat_off').show();   
     window.startup = true;
     mainDirectoryFolder();
     var currOpened_dir = GetLocal("CurrPath");
@@ -528,7 +527,7 @@ function scanThisFolder(dirURL) {
     };
     window.resolveLocalFileSystemURL(dirURL, addFileEntry, addError);
 }
-function PlaySong(current_song, song_ID, playlistID, Id) {
+function PlaySong(current_song, song_ID, playlistID, Id) {    
     $(".playing").removeClass("playing");
     var profileID = "";
     if (song_ID.indexOf("FLsong_id")) {
@@ -556,24 +555,20 @@ function PlaySong(current_song, song_ID, playlistID, Id) {
                 $("#artist_Name").html(artistString);
                 $("#song_Name").html(song_title);
                 SaveLocal("songName", song_title);
-            } catch (error) {
-                elog(error);
-            }
+            } catch (error) {elog(error);}  
         });
     }
-    catch (exception) {
-        elog(exception);
-    }
+    catch (exception) { elog(exception); }
     window.wavesurfer.load(current_song);
     try {
         var songload = true;
-        window.wavesurfer.on('play', function () {
+        window.wavesurfer.on('play', function () {          
             if (window.startup) {
                 window.startup = false;
                 window.wavesurfer.playPause();
             }
             if (songload) {
-                songload = false;
+                songload = false;              
                 if (profileID) {
                     if (profileID != 0) {
                         if (checkConnection()) {
@@ -757,7 +752,7 @@ function checkConnection() {
 function GetAllEqualizerProfiles() {
     try {
         log("GetAllEqualizerProfiles starts");
-        var promiseDone = GetAjax("http://testingserver.net/audio/api/getprofile");
+        var promiseDone = GetAjax(window.restApi+'/getprofile');
         promiseDone.done(function (resultData) {
             var profile = JSON.stringify(resultData.profile);
             profile = eval(profile.replace(/\"/g, "'"));
@@ -776,7 +771,7 @@ function equalizer_SetValue(_Profile_id) {
     $("#profile" + _Profile_id).addClass("profileSelected");
     try {
         SaveLocal("selected_profileId", _Profile_id);
-        var profileData = GetAjax("http://testingserver.net/audio/api/getprofile/" + _Profile_id);
+        var profileData = GetAjax(window.restApi+'/getprofile/' + _Profile_id);
         var key_valuesPair = "";
         profileData.done(function (resultData) {
             var profileBand = resultData.profile[0].band;

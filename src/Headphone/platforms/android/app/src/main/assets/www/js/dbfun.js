@@ -124,14 +124,14 @@ function syncLocalDBdata() {
             deleteTableRows("playlist");
             deleteTableRows("songs");
             var defr = $.Deferred();
-            var PlayListDone = GetAjax("http://testingserver.net/audio/api/getplaylist/" + userId);
+            var PlayListDone = GetAjax(window.restApi+'/getplaylist/' + userId);
             PlayListDone.done(function (PLresultData) {
                 try {
                     var AllPlaylistData = JSON.parse(JSON.stringify(PLresultData.data));
                     $.each(AllPlaylistData, function (index, key) {
                         insertPlaylistData(key.name,0);                       
                         var playlist_id = index + 1;
-                        var playlistSongDONE = GetAjax("http://testingserver.net/audio/api/getplaylist/" + userId + "/" + key.id);
+                        var playlistSongDONE = GetAjax(window.restApi+'/getplaylist/' + userId + '/' + key.id);
                         playlistSongDONE.done(function (resultData) {
                             var songsData = JSON.parse(JSON.stringify(resultData.data.playlists.songs));
                             $.each(songsData, function (i, key_val) {
@@ -218,7 +218,7 @@ function sendAjaxCall(Songs, curr_PL_id) {
         var AddData = JSON.stringify(JSON.parse(Songs));
         $.ajax({
             method: "POST",
-            url: 'http://testingserver.net/audio/api/addplaylist',
+            url:window.restApi+'/addplaylist',
             data: { 'data': AddData },
         }).done(function (data) {
             log('Upload Successfully');

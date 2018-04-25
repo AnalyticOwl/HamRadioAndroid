@@ -1,5 +1,6 @@
 $(document).ready(function () {
-    SaveLocal("rest", "http://testingserver.net/audio/api");
+  //  SaveLocal("rest", "http://testingserver.net/audio/api");
+  window.restApi="http://testingserver.net/testapi/audio/api";
     $("#signoutId").hide();
     $("#signinId").show();
     $(document).bind("mobileinit", function () {
@@ -47,7 +48,7 @@ function User_SignUp() {
     var user_email_val = $("#Reg_User_Email").val();
     var user_pwd_val = $("#Reg_User_pwd").val();
     var Reg_text = '{"username": "' + user_name_val + '","email": "' + user_email_val + '","password": "' + user_pwd_val + '"}';
-    var Reg_URL = 'http://testingserver.net/audio/api/registeruser';
+    var Reg_URL = window.restApi+'/registeruser';
     var Data = JSON.stringify(JSON.parse(Reg_text));
     if (checkConnection()) {
         var Reg_out_val = PostAjax(Reg_URL, Data);
@@ -64,13 +65,13 @@ function User_SignIn() {
     var user_email = $("#Get_User_email").val();
     var user_pwd = $("#Get_User_pwd").val();
     var Login_text = '{"email": "' + user_email + '","password": "' + user_pwd + '"}';
-    var login_URL = 'http://testingserver.net/audio/api/loginuser';
+    var login_URL = window.restApi+'/loginuser';
     var Data = JSON.stringify(JSON.parse(Login_text));
     if (checkConnection()) {
         var login_out_val = PostAjax(login_URL, Data);
         try {
-            login_out_val.done(function (resultData) {
-                var jsonData = JSON.parse(resultData);
+            login_out_val.done(function (jsonData) {                
+                //var jsonData = resultData; //JSON.parse(resultData);
                 log(jsonData);
                 log(jsonData.status);
                 if (jsonData.status == "success") {
@@ -116,7 +117,7 @@ $(document).on('click', '#forget_Password', function () {
         var user_email = $("#Get_User_email").val();
         if (user_email != 0) {
             var email_change_data = '{"email":"' + user_email + '"}';
-            var Url = 'http://testingserver.net/audio/api/forgetpassword';
+            var Url = window.restApi+'/forgetpassword';
             var api_data = JSON.stringify(JSON.parse(email_change_data));
             var api_link = PostAjax(Url, api_data);
             api_link.done(function (result) {
@@ -133,7 +134,7 @@ $(document).on('click', "#changepwd", function () {
     if (checkConnection()) {
         if (GetLocal("User_status") == "success") {
             var forget_data = '{"email":"' + GetLocal("User_Email") + '"}';
-            var Url = 'http://testingserver.net/audio/api/forgetpassword';
+            var Url = window.restApi+'/forgetpassword';
             var forget_Data = JSON.stringify(JSON.parse(forget_data));
             var promisDone = PostAjax(Url, forget_Data);
             promisDone.done(function (result) {

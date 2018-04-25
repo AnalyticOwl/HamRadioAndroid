@@ -1,4 +1,4 @@
-function InitWavesurfer() {
+function InitWavesurfer(audioCtx_obj) {
     try {
         log('wavesurfer init');
         window.wavesurfer = WaveSurfer.create({
@@ -6,8 +6,9 @@ function InitWavesurfer() {
             barWidth: 4,
             height: 50,
             waveColor: '#555555',
-            progressColor: '#FFBF00'
+            progressColor: '#FFBF00'           
         });
+        log( window.wavesurfer);
         wavesurfer.on('audioprocess', function (time) {
             try {
                 var minutes = Math.floor((time % 3600) / 60);
@@ -16,8 +17,7 @@ function InitWavesurfer() {
                 var total_minutes = Math.floor((totalTime % 3600) / 60);
                 var total_seconds = ('00' + Math.floor(totalTime % 60)).slice(-2);
                 // $("#time_current").html(minutes + ':' + seconds);
-                // $("#time_total").html(total_minutes + ':' + total_seconds);
-                // wavesurfer.setVolume($('.slider_input').val() / 100);
+                // $("#time_total").html(total_minutes + ':' + total_seconds);                
                 var def = Math.floor(totalTime - time);
                 if (GetLocal("repeat") == "on" && def == 1) {
                     wavesurfer.seekTo(0);
